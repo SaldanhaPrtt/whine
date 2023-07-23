@@ -1,0 +1,17 @@
+import React from 'react';
+import { View, Text } from 'react-native';
+import CircleButton from '../../components/CircleButton';
+import TypesBar from '../../components/TypesBar';
+
+import styles from './styles';
+
+export default function Home() {
+  return (
+    <View style={styles.container}>
+      <Text>Home</Text>
+      <View style={styles.scrollWrapper}>
+        <TypesBar />
+      </View>
+    </View>
+  );
+}
