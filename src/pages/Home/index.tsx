@@ -8,7 +8,6 @@ import styles from './styles';
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
       <View style={styles.scrollWrapper}>
         <TypesBar />
       </View>
