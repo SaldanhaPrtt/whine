@@ -8,9 +8,10 @@ type Props = {
   color: string;
 }
 
-export default function CircleButton({ text }: Props) {
+export default function CircleButton({ text, color }: Props) {
+  const backgroundColor = color ? color : 'rgba(255, 255, 255, 0.1)';
   return (
-    <TouchableHighlight style={styles.container}>
+    <TouchableHighlight style={[styles.container, { backgroundColor: backgroundColor }]}>
       <Text style={styles.label}>{text}</Text>
     </TouchableHighlight>
   );
