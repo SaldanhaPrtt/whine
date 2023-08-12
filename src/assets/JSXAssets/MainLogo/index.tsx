@@ -4,9 +4,9 @@ import { Svg, Path } from "react-native-svg";
 export default function MainLogo() {
   return (
     <Svg
-      width="2560"
-      height="2560"
-      viewBox="0 0 1920 1920"
+      width="80"
+      height="80"
+      viewBox="0 0 100 100"
       fill={"#fff"}
     >
       <Path
