@@ -15,6 +15,14 @@ const styles = StyleSheet.create({
         height: 100,
         // flexDirection: 'row',
     },
+    squareWrapper: {
+        // flex: 1,
+        // backgroundColor: 'black',
+        marginTop: 100,
+        width: '100%',
+        height: 100,
+        // flexDirection: 'row',
+    },
 });
 
 export default styles;
