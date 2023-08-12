@@ -3,13 +3,15 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'rgba(102 0, 0, 0.7)', //660000
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 80,
+    height: 80,
+    borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 5,
-    shadowColor: 'rgba(0, 0, 0, 0.4)',
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.4)',
+    shadowColor: 'rgba(255, 255, 255, 0.4)',
     shadowOffset: {
       width: 0,
       height: 4,

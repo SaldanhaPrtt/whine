@@ -12,8 +12,8 @@ export default function Home() {
       <Header />
       <View style={styles.scrollWrapper}>
         <TypesBar />
-        <PromoBanner />
       </View>
+      <PromoBanner />
     </View>
   );
 }
