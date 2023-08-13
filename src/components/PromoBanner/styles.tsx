@@ -4,9 +4,10 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    width: width,
-    height: 80,
+    width: width-20,
+    height: 100,
     backgroundColor: 'red',
+    borderRadius: 10,
   },
 });
 
