@@ -6,8 +6,17 @@ const styles = StyleSheet.create({
   container: {
     width: width-20,
     height: 100,
-    backgroundColor: 'red',
+    marginBottom: 20,
+    backgroundColor: '#220000cc',
     borderRadius: 10,
+    shadowColor: "#FFF",
+    shadowOffset: {
+      width: 0,
+      height: 9,
+    },
+    shadowOpacity: 0.48,
+    shadowRadius: 11.95,
+    elevation: 18,
   },
 });
 

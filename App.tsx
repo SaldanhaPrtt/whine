@@ -6,6 +6,8 @@ import {
 } from 'react-native';
 
 import Home from './src/pages/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigation from './src/navigation/AppNavigation';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -15,7 +17,9 @@ StatusBar.setHidden(true);
 function App(): JSX.Element {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Home />
+      <NavigationContainer>
+        <AppNavigation />
+      </NavigationContainer>
     </SafeAreaView>
   );
 }
