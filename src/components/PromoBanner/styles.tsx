@@ -9,14 +9,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     backgroundColor: '#220000',
     borderRadius: 10,
-    shadowColor: "#FFF",
+    shadowColor: "rgba(255, 255, 255, 1)",
     shadowOffset: {
       width: 5,
       height: 5,
     },
     shadowOpacity: 0.5,
     shadowRadius: 8,
-    elevation: 20,
+    elevation: 10,
   },
 });
 
