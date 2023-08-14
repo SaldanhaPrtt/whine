@@ -7,16 +7,16 @@ const styles = StyleSheet.create({
     width: width-20,
     height: 100,
     marginBottom: 20,
-    backgroundColor: '#220000cc',
+    backgroundColor: '#220000',
     borderRadius: 10,
     shadowColor: "#FFF",
     shadowOffset: {
-      width: 0,
-      height: 9,
+      width: 5,
+      height: 5,
     },
-    shadowOpacity: 0.48,
-    shadowRadius: 11.95,
-    elevation: 18,
+    shadowOpacity: 0.5,
+    shadowRadius: 8,
+    elevation: 20,
   },
 });
 
