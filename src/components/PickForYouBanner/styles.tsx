@@ -6,10 +6,18 @@ const styles = StyleSheet.create({
   container: {
     width: width-20,
     height: 100,
-    backgroundColor: 'red',
+    backgroundColor: '#220000',
     borderRadius: 10,
     marginTop: 10,
   },
+  label: {
+    fontSize: 20,
+    fontFamily: 'Gotham-Light',
+    color: 'white',
+    alignSelf: 'center',
+    textAlignVertical: 'center',
+    paddingVertical: 'auto'
+  }
 });
 
 export default styles;

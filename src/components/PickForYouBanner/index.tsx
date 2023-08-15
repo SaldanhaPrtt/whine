@@ -9,7 +9,7 @@ export default function PickForYouBanner({navigation}: any) {
   }
   return (
     <Pressable style={styles.container} onPress={handlePress}>
-      <Text>Escolha para você</Text>
+      <Text style={styles.label}>Te Ajudamos a Escolher</Text>
     </Pressable>
   );
 }
