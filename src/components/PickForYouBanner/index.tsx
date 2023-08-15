@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, ImageBackground, Pressable } from 'react-native';
 import styles from './styles';
-import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function PickForYouBanner() {
+export default function PickForYouBanner({navigation}: any) {
+  const handlePress = () => {
+    console.log('PickForYouBanner pressed');
+    navigation.navigate('Pick');
+  }
   return (
-    <Pressable style={styles.container} >
+    <Pressable style={styles.container} onPress={handlePress}>
       <Text>Escolha para você</Text>
     </Pressable>
   );

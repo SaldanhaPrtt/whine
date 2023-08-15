@@ -3,12 +3,7 @@ import { View, Text, TouchableHighlight } from 'react-native';
 
 import styles from './styles';
 
-type Props = {
-  text: string;
-  color: string;
-}
-
-export default function CircleButton({ text, color }: Props) {
+export default function SquareButton({ text, color }: any) {
   return (
     <TouchableHighlight style={[styles.container]}>
       <Text style={styles.label}>{text}</Text>

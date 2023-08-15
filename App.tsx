@@ -5,6 +5,8 @@ import {
   StatusBar,
 } from 'react-native';
 
+import 'react-native-gesture-handler';
+
 import Home from './src/pages/Home';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';

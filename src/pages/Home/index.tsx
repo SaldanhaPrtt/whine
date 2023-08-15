@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import CircleButton from '../../components/CircleButton';
 import TypesBar from '../../components/TypesBar';
 import PromoBanner from '../../components/PromoBanner';
@@ -8,8 +8,7 @@ import styles from './styles';
 import Header from '../../components/Header';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Home() {
-  const navigation = useNavigation();
+export default function Home({ navigation, route }: any) {
   return (
     <View style={styles.container}>
       <Header />
@@ -17,7 +16,7 @@ export default function Home() {
         <TypesBar />
       </View>
       <PromoBanner />
-      <PickForYouBanner />
+      <PickForYouBanner navigation={navigation} />
     </View>
   );
 }
