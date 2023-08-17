@@ -9,14 +9,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#220000',
     borderRadius: 10,
     marginTop: 10,
+    textAlignVertical: 'center',
+    justifyContent: 'center',
   },
   label: {
     fontSize: 20,
     fontFamily: 'Gotham-Light',
     color: 'white',
     alignSelf: 'center',
-    textAlignVertical: 'center',
-    paddingVertical: 'auto'
   }
 });
 

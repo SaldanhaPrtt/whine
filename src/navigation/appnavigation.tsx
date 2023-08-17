@@ -11,6 +11,10 @@ const AppNavigation = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        transitionSpec: {
+          open: { animation: 'timing', config: { duration: 300 } },
+          close: { animation: 'timing', config: { duration: 300 } },
+        },
       }}
     >
       <Stack.Screen name="Home" component={Home} />
