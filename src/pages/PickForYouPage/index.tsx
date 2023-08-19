@@ -10,6 +10,11 @@ export default function PickForYouPage() {
       <Header />
       <Text>PickForYouPage</Text>
       <SquareButton text="Test" color="red" />
+      <SquareButton text="Test" color="red" />
+      <SquareButton text="Test" color="red" />
+      <SquareButton text="Test" color="red" />
+      <SquareButton text="Test" color="red" />
+      <SquareButton text="Test" color="red" />
     </View>
   );
 }

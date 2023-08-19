@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import SquareButton from '../../components/SquareButton';
+import styles from './styles';
+import Header from '../../components/Header';
 
-export default function Settings() {
+export default function Profile() {
   return (
-    <View>
-      <Text>SETTINGS</Text>
+    <View style={styles.container}>
+      <Header />
+      <Text>Profile</Text>
       <SquareButton text="Test" color="red" />
     </View>
   );
