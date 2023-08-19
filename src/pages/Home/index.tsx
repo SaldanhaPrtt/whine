@@ -17,6 +17,16 @@ export default function Home({ navigation, route }: any) {
       </View>
       <PromoBanner />
       <PickForYouBanner navigation={navigation} />
+        <CircleButton
+          text="+"
+          color="#FFC700"
+          onPress={() => navigation.navigate('RegisterWhine')}
+        />
+        <CircleButton
+          text="P"
+          color="#FFC700"
+          onPress={() => navigation.navigate('Profile')}
+        />
     </View>
   );
 }

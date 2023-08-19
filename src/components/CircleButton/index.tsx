@@ -6,11 +6,12 @@ import styles from './styles';
 type Props = {
   text: string;
   color: string;
+  onPress: () => void;
 }
 
-export default function CircleButton({ text, color }: Props) {
+export default function CircleButton({ text, color, onPress }: Props) {
   return (
-    <TouchableHighlight style={[styles.container]}>
+    <TouchableHighlight style={[styles.container]} onPress={onPress}>
       <Text style={styles.label}>{text}</Text>
     </TouchableHighlight>
   );
