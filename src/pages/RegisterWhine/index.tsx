@@ -5,8 +5,9 @@ import * as ImagePicker from 'react-native-image-picker';
 
 import styles from './styles';
 import Header from '../../components/Header';
+import CircleButton from '../../components/CircleButton';
 
-export default function RegisterWhine() {
+export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
   const [image, setImage] = React.useState<any>(null);
   const [title, setTitle] = React.useState('');
   const [description, setDescription] = React.useState('');
@@ -34,6 +35,16 @@ export default function RegisterWhine() {
       <Header />
       <Text style={styles.title}>Register Whine</Text>
       <View style={styles.inputContainer}>
+      <CircleButton
+            text="+"
+            color="#FFC700"
+            onPress={() => navigation.navigate('RegisterWhine')}
+          />
+          <CircleButton
+            text="P"
+            color="#FFC700"
+            onPress={() => navigation.navigate('Profile')}
+          />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setTitle(text)}

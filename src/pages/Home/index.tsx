@@ -14,7 +14,7 @@ import bg6 from '../../assets/PNG/bg6.jpg';
 
 export default function Home({ navigation, route }: any) {
   return (
-    <ImageBackground source={bg4} style={styles.bgImage} blurRadius={5}>
+    <ImageBackground source={bg5} style={styles.bgImage} blurRadius={1}>
       <View style={styles.container}>
         <Header />
         <View style={styles.scrollWrapper}>
@@ -22,16 +22,6 @@ export default function Home({ navigation, route }: any) {
         </View>
         <PromoBanner />
         <PickForYouBanner navigation={navigation} />
-          <CircleButton
-            text="+"
-            color="#FFC700"
-            onPress={() => navigation.navigate('RegisterWhine')}
-          />
-          <CircleButton
-            text="P"
-            color="#FFC700"
-            onPress={() => navigation.navigate('Profile')}
-          />
       </View>
     </ImageBackground>
   );
