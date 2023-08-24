@@ -17,7 +17,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 8,
     elevation: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  label: {
+    fontSize: 20,
+    fontFamily: 'Gotham-Light',
+    color: 'white',
+    alignSelf: 'center',
+  }
 });
 
 export default styles;

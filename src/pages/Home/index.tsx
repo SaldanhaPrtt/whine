@@ -11,6 +11,7 @@ import bg2 from '../../assets/PNG/bg2.webp';
 import bg4 from '../../assets/PNG/bg4.jpg';
 import bg5 from '../../assets/PNG/bg5.jpg';
 import bg6 from '../../assets/PNG/bg6.jpg';
+import { LinearGradient } from 'react-native-svg';
 
 export default function Home({ navigation, route }: any) {
   return (
@@ -22,6 +23,21 @@ export default function Home({ navigation, route }: any) {
         </View>
         <PromoBanner />
         <PickForYouBanner navigation={navigation} />
+        <CircleButton
+          text="Profile"
+          color="#FFC700"
+          onPress={() => navigation.navigate('Profile')}
+        />
+        <CircleButton
+          text="Register"
+          color="#FFC700"
+          onPress={() => navigation.navigate('RegisterWhine')}
+        />
+        <CircleButton
+          text="Pick"
+          color="#FFC700"
+          onPress={() => navigation.navigate('Pick')}
+        />
       </View>
     </ImageBackground>
   );

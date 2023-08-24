@@ -5,7 +5,7 @@ import styles from './styles';
 export default function PromoBanner() {
   return (
     <View style={styles.container}>
-      <Text>PromoBanner</Text>
+      <Text style={styles.label}>PromoBanner</Text>
     </View>
   );
 }

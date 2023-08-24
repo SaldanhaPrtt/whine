@@ -13,6 +13,11 @@ const AppNavigation = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        gestureEnabled: true,
+        gestureDirection: 'horizontal',
+        animationEnabled: true,
+        cardStyle: { backgroundColor: 'transparent' },
+        cardOverlayEnabled: true,
         transitionSpec: {
           open: { animation: 'timing', config: { duration: 300 } },
           close: { animation: 'timing', config: { duration: 300 } },
