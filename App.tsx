@@ -29,9 +29,10 @@ const navTheme = {
   },
 };
 
-function App(): JSX.Element {
+function App() {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar hidden={true} barStyle="light-content" translucent={true}/>
       <NavigationContainer theme={navTheme}>
         <AppNavigation />
       </NavigationContainer>

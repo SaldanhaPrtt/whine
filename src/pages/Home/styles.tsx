@@ -1,4 +1,7 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
+
+import { Dimensions } from 'react-native';
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
@@ -10,8 +13,10 @@ const styles = StyleSheet.create({
     },
     bgImage: {
         flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center",
+        resizeMode: 'contain',
+        width: width,
+        height: Platform.OS === 'ios' ? height : 'auto',
+        position: Platform.OS === 'ios' ? 'absolute' : 'relative',
     },
     scrollWrapper: {
         // flex: 1,
