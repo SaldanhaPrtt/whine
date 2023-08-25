@@ -17,17 +17,12 @@ export default function Home({ navigation, route }: any) {
   return (
     <ImageBackground source={bg5} style={styles.bgImage} blurRadius={1}>
       <View style={styles.container}>
-        <Header />
+        <Header navigation={navigation} route={route} />
         <View style={styles.scrollWrapper}>
           <TypesBar />
         </View>
         <PromoBanner />
         <PickForYouBanner navigation={navigation} />
-        <CircleButton
-          text="Profile"
-          color="#FFC700"
-          onPress={() => navigation.navigate('Profile')}
-        />
         <CircleButton
           text="Register"
           color="#FFC700"
