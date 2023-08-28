@@ -34,6 +34,11 @@ const AppNavigation = () => {
       <Stack.Screen 
         name="Profile"
         component={Profile}
+        options={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: 'horizontal-inverted'
+        }}
       />
       <Stack.Screen 
         name="RegisterWhine"

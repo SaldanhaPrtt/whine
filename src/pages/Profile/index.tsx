@@ -4,12 +4,11 @@ import SquareButton from '../../components/SquareButton';
 import styles from './styles';
 import Header from '../../components/Header';
 
-export default function Profile() {
+export default function Profile({navigation, route} : any) {
   return (
     <View style={styles.container}>
-      <Header />
+      <Header navigation={navigation} route={route} />
       <Text>Profile</Text>
-      <SquareButton text="Test" color="red" />
     </View>
   );
 }
