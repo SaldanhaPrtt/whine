@@ -4,6 +4,7 @@ import CircleButton from '../../components/CircleButton';
 import TypesBar from '../../components/TypesBar';
 import PromoBanner from '../../components/PromoBanner';
 import PickForYouBanner from '../../components/PickForYouBanner';
+import ProductsContainer from '../../components/ProductsContainer';
 import styles from './styles';
 import Header from '../../components/Header';
 import { useNavigation } from '@react-navigation/native';
@@ -23,6 +24,7 @@ export default function Home({ navigation, route }: any) {
         </View>
         <PromoBanner />
         <PickForYouBanner navigation={navigation} />
+        <ProductsContainer />
         <CircleButton
           text="Register"
           color="#FFC700"
