@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 120,
     backgroundColor: 'rgba(102, 0, 0, 1)', //660000
     borderRadius: 10,
     justifyContent: 'center',
@@ -25,6 +25,24 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Light',
+  },
+  price: {
+    color: 'rgba(255, 255, 255, 1)',
+    fontSize: 14,
+    textAlign: 'center',
+    fontFamily: 'Gotham-Bold',
+  },
+  oldPrice: {
+    color: 'rgba(255, 255, 255, 0.8)',
+    fontSize: 12,
+    textAlign: 'center',
+    fontFamily: 'Gotham-Light',
+    textDecorationLine: 'line-through',
+  },
+  image: {
+    width: 60,
+    marginBottom: 5,
+    borderRadius: 8,
   },
 });
 

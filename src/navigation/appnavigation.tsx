@@ -18,10 +18,32 @@ const AppNavigation = () => {
         ...TransitionPresets.SlideFromRightIOS
       }}
     >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Pick" component={PickNavigation} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="RegisterWhine" component={RegisterWhine} />
+      <Stack.Screen 
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: 'horizontal-inverted'
+        }}
+      />
+      <Stack.Screen 
+        name="Pick" 
+        component={PickNavigation}
+      />
+      <Stack.Screen 
+        name="Profile"
+        component={Profile}
+        options={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: 'horizontal-inverted'
+        }}
+      />
+      <Stack.Screen 
+        name="RegisterWhine"
+        component={RegisterWhine}
+      />
     </Stack.Navigator>
   );
 }
