@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(102, 0, 0, 0.3)', //660000
+    // backgroundColor: 'rgba(102, 0, 0, 0.3)', //660000
     width: 90,
     height: 90,
     borderRadius: 100,
