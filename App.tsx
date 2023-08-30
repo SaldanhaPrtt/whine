@@ -12,13 +12,11 @@ import 'react-native-gesture-handler';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
-import { LogBox } from 'react-native';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 StatusBar.setHidden(true);
-LogBox.ignoreLogs(['new NativeEventEmitter']);
 SystemNavigationBar.navigationHide();
 
 const navTheme = {

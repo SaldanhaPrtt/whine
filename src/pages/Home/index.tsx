@@ -16,7 +16,7 @@ import { LinearGradient } from 'react-native-svg';
 
 export default function Home({ navigation, route }: any) {
   return (
-    <ImageBackground source={bg5} style={styles.bgImage} blurRadius={1}>
+    <ImageBackground source={bg4} style={styles.bgImage} blurRadius={1}>
       <View style={styles.container}>
         <Header navigation={navigation} route={route} />
         <View style={styles.scrollWrapper}>

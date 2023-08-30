@@ -2,15 +2,17 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: 80,
-    height: 120,
-    backgroundColor: 'rgba(102, 0, 0, 0.5)', //660000
-    borderRadius: 10,
+    width: 85,
+    height: 140,
+    backgroundColor: 'rgba(102, 0, 0, 1)', //660000
+    borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 4,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    paddingHorizontal: 5,
     borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.4)',
+    borderColor: 'rgba(100, 100, 100, 0.4)',
     shadowColor: 'rgba(255, 255, 255, 1)',
     shadowRadius: 10,
     elevation: 10,
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
   },
   price: {
     color: 'rgba(255, 255, 255, 1)',
-    fontSize: 14,
+    fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Bold',
   },
@@ -40,9 +42,16 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
   },
   image: {
-    width: 60,
+    width: 85,
+    height: 90,
+    resizeMode: 'contain',
     marginBottom: 5,
-    borderRadius: 8,
+    borderRadius: 6,
+  },
+  pricesView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

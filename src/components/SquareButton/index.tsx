@@ -13,11 +13,14 @@ type Props = {
 export default function SquareButton({ text, color, price, oldPrice }: Props) {
   return (
     <TouchableHighlight style={[styles.container]}>
-      <ImageBackground source={small_product_image} style={styles.image}>
-        <Text style={styles.label}>{text}</Text>
-        <Text style={styles.price}>${price}</Text>
-        <Text style={styles.oldPrice}>${oldPrice}</Text>
-      </ImageBackground>
+      <View>
+          <ImageBackground source={small_product_image} style={styles.image} borderTopLeftRadius={6} borderTopRightRadius={6} />
+          <Text style={styles.label}>{text}</Text>
+          <View style={styles.pricesView}>
+            <Text style={styles.price}>R$ {price}</Text>
+            <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
+          </View>
+      </View>
     </TouchableHighlight>
   );
 }
