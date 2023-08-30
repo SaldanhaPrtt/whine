@@ -4,13 +4,20 @@ import small_product_image from '../../assets/PNG/small_product_image.jpg';
 import styles from './styles';
 
 type Props = {
+  navigation: any;
+  route: any;
   text: string;
   color: string;
   price: number;
   oldPrice: number;
 };
 
-export default function SquareButton({ text, color, price, oldPrice }: Props) {
+export default function ProductButton({ navigation, route, text, color, price, oldPrice }: Props) {
+
+  const handlePress = () => {
+    console.log(`You clicked ${text} button`);
+    navigation.navigate('ProductPage', { text, color, price, oldPrice });
+  }
   return (
     <TouchableHighlight style={[styles.container]}>
       <View>

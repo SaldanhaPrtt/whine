@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Profile from '../pages/Profile';
 import RegisterWhine from '../pages/RegisterWhine';
 import PickNavigation from './PickNavigation';
+import ProductPage from '../pages/ProductPage';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,15 @@ const AppNavigation = () => {
       <Stack.Screen 
         name="RegisterWhine"
         component={RegisterWhine}
+      />
+      <Stack.Screen
+        name="ProductPage"
+        component={ProductPage}
+        options={{
+          headerShown: false,
+          gestureEnabled: true,
+          gestureDirection: 'horizontal-inverted'
+        }}
       />
     </Stack.Navigator>
   );

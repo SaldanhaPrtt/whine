@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: '#220000',
     borderRadius: 10,
-    marginTop: 10,
     textAlignVertical: 'center',
     justifyContent: 'center',
   },
