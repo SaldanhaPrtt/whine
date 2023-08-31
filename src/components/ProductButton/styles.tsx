@@ -2,25 +2,14 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: 85,
-    height: 140,
-    backgroundColor: 'rgba(102, 0, 0, 1)', //660000
-    borderRadius: 6,
+    width: 176,
+    height: 229,
+    // backgroundColor: 'rgba(102, 0, 0, 1)', //660000
+    backgroundColor: '#F6F6F6',
+    borderRadius: 18,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 5,
-    marginVertical: 5,
-    paddingHorizontal: 5,
-    borderWidth: 1,
-    borderColor: 'rgba(100, 100, 100, 0.4)',
-    shadowColor: 'rgba(255, 255, 255, 1)',
-    shadowRadius: 10,
-    elevation: 10,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 1,
+    boxShadow: '4px 6px 21px 0px rgba(118, 118, 118, 0.1)',
   },
   label: {
     color: 'rgba(200, 200, 200, 0.8)',
