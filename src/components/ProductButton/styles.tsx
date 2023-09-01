@@ -11,19 +11,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    color: 'rgba(200, 200, 200, 0.8)',
+    color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Light',
   },
   price: {
-    color: 'rgba(255, 255, 255, 1)',
+    color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Bold',
   },
   oldPrice: {
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Light',
