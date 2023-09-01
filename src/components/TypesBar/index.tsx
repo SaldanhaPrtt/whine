@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import CircleButton from '../CircleButton';
+import CircleButton from '../TypeButton';
 
 import styles from './styles';
 
@@ -22,9 +22,10 @@ export default function TypesBar() {
       style={styles.container} 
       horizontal={true}
       showsHorizontalScrollIndicator={true}
+      snapToInterval={180}
       scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
       overScrollMode='never'
-      indicatorStyle='white'
+      indicatorStyle='black'
     >
       <CircleButton text="Merlot" color={colorsArray[0]} onPress={OnPress} />
       <CircleButton text="Cabernet Sauvignon" color={colorsArray[0]} onPress={OnPress} />

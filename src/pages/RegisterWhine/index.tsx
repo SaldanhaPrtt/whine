@@ -5,7 +5,7 @@ import * as ImagePicker from 'react-native-image-picker';
 
 import styles from './styles';
 import Header from '../../components/Header';
-import CircleButton from '../../components/CircleButton';
+import CircleButton from '../../components/TypeButton';
 
 export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
   const [image, setImage] = React.useState<any>(null);

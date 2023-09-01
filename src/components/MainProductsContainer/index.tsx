@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, View} from 'react-native';
-import SquareButton from '../ProductButton';
+import ProductButton from '../ProductButton';
 import styles from './styles';
 
 type Props = {
@@ -15,22 +15,22 @@ export default function MainProductsContainer({ navigation, route }: Props) {
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
       >
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
-        <SquareButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 1" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 2" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 3" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 4" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 5" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 6" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Vinho 7" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Cadastrar Produto" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
+        <ProductButton text="Listar Produtos" color="#FFC107" price={10} oldPrice={20} navigation={navigation} route={route} />
       </ScrollView>
     // </View>
   );

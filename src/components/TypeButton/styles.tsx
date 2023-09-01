@@ -3,8 +3,8 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'rgba(76, 0, 0, 0.9)', //660000
-    width: 68,
-    height: 68,
+    width: 80,
+    height: 80,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
