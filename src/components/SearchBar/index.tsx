@@ -16,7 +16,7 @@ export default function SearchBar({ navigation, route }: Props) {
 //   const onChangeSearch = (query: any) => setSearchQuery(query);
 
   return (
-    // <View style={styles.container}>
+    <View style={styles.container}>
       <Searchbar
         placeholder="Search"
         // onChangeText={onChangeSearch}
@@ -24,6 +24,9 @@ export default function SearchBar({ navigation, route }: Props) {
         style={styles.searchBar}
         icon={() => <SearchIcon />}
       />
-    // </View>
+      <TouchableHighlight>
+        <FilterSearch />
+      </TouchableHighlight>
+    </View>
   );
 }

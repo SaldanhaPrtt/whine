@@ -2,19 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
-    marginHorizontal: 30
+    // flex: 1,
+    flexDirection: 'row',
+    verticalAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 30,
+    width: '100%',
   },
   searchBar: {
-    backgroundColor: 'rgba(76, 0, 0, 0.9)',
+    // backgroundColor: 'rgba(76, 0, 0, 0.9)',
+    width: 300,
     borderRadius: 10,
-    height: 40,
-    marginHorizontal: 10,
+    height: 48,
     marginVertical: 20,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 10,
+    marginHorizontal: 10,
+    paddingHorizontal: 8,
   },
 });
 
