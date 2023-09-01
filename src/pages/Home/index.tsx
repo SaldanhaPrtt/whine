@@ -14,6 +14,7 @@ import bg5 from '../../assets/PNG/bg5.jpg';
 import bg6 from '../../assets/PNG/bg6.jpg';
 import { LinearGradient } from 'react-native-svg';
 import SearchBar from '../../components/SearchBar';
+import FooterNavigator from '../../components/FooterNavigator';
 
 export default function Home({ navigation, route }: any) {
   return (
@@ -27,6 +28,7 @@ export default function Home({ navigation, route }: any) {
         {/* <PromoBanner />
         <PickForYouBanner navigation={navigation} /> */}
         <ProductsContainer navigation={navigation} route={route} />
+        <FooterNavigator navigation={navigation} route={route} />
       </View>
     // </ImageBackground>
   );
