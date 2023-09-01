@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: '4px 6px 21px 0px rgba(118, 118, 118, 0.1)',
   },
   label: {
     color: 'rgba(200, 200, 200, 0.8)',

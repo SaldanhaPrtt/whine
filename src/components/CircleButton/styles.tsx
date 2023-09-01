@@ -2,10 +2,10 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'rgba(102, 0, 0, 0.3)', //660000
-    width: 90,
-    height: 90,
-    borderRadius: 8,
+    backgroundColor: 'rgba(76, 0, 0, 0.9)', //660000
+    width: 68,
+    height: 68,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 4,
