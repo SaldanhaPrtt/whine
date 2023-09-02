@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, Image, ImageBackground } from 'react-native';
+import { View, Text, TouchableHighlight, Image, ImageBackground, Pressable } from 'react-native';
 import small_product_image from '../../assets/PNG/small_product_image.jpg';
 import wine_png from '../../assets/PNG/wine_png.png';
 import styles from './styles';
@@ -30,9 +30,9 @@ export default function ProductButton({ navigation, route, text, color, price, o
           <Text style={styles.price}>R$ {price}</Text>
           <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
         </View>
-        <View style={styles.plusIconView}>
+        <Pressable style={styles.plusIconView} onPress={handlePress}>
           <PlusIcon />
-        </View>
+        </Pressable>
       </View>
     </TouchableHighlight>
   );
