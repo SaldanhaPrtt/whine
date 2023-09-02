@@ -8,9 +8,11 @@ const styles = StyleSheet.create({
     height: normalize(480),
     bottom: 0,
     backgroundColor: "#F6F6F6",
-    borderRadius: 18,
+    borderTopLeftRadius: normalize(50),
+    borderTopRightRadius: normalize(50),
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    position: "absolute",
   },
   label: {
     color: "rgba(76, 0, 0, 0.9)",
