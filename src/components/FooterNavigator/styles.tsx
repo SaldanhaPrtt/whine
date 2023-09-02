@@ -2,8 +2,12 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
-    marginHorizontal: 30
+    height: 300,
+    width: "100%",
+    marginHorizontal: 30,
+    position: "absolute",
+    bottom: 100,
+    zIndex: 100,
   },
   bar: {
     backgroundColor: 'rgba(76, 0, 0, 0.9)',

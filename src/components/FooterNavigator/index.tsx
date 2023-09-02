@@ -25,6 +25,7 @@ export default function FooterNavigator({ navigation, route }: Props) {
   });
 
   return (
+    <View style={styles.container}>
     <BottomNavigation
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
@@ -33,5 +34,6 @@ export default function FooterNavigator({ navigation, route }: Props) {
       activeColor="#FFC107"
       inactiveColor="#FFFFFF"
     />
+    </View>
   );
 }

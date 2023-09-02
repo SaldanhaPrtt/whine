@@ -23,14 +23,17 @@ export default function ProductButton({ navigation, route, text, color, price, o
   return (
     <TouchableHighlight style={[styles.container]}>
       <View>
-          <ImageBackground source={wine_png} style={styles.image} borderTopLeftRadius={6} borderTopRightRadius={6} />
+          <ImageBackground source={wine_png} style={styles.image} />
           <Text style={styles.label}>{text}</Text>
-          <View style={styles.pricesView}>
-            <Text style={styles.price}>R$ {price}</Text>
-            <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
-            <PlusIcon />
+          <View style={styles.lowerView} />
+            <View style={styles.pricesView}>
+              <Text style={styles.price}>R$ {price}</Text>
+              <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
+            </View>
+            <View style={styles.plusIconView}>
+              <PlusIcon />
+            </View>
           </View>
-      </View>
     </TouchableHighlight>
   );
 }

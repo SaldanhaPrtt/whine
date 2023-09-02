@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import CircleButton from '../TypeButton';
 
 import styles from './styles';
+import normalize from 'react-native-normalize';
 
 interface Props {
   label: string;
@@ -22,7 +23,7 @@ export default function TypesBar() {
       style={styles.container} 
       horizontal={true}
       showsHorizontalScrollIndicator={true}
-      snapToInterval={180}
+      snapToInterval={normalize(90)}
       scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
       overScrollMode='never'
       indicatorStyle='black'

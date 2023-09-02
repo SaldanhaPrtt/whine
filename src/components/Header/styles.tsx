@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import normalize from "react-native-normalize";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
-    paddingHorizontal: 30,
+    marginTop: normalize(40),
+    paddingHorizontal: normalize(20),
     width: "100%",
     // height: 90,
     alignItems: "center",

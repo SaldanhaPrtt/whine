@@ -28,7 +28,9 @@ export default function Home({ navigation, route }: any) {
         {/* <PromoBanner />
         <PickForYouBanner navigation={navigation} /> */}
         <ProductsContainer navigation={navigation} route={route} />
-        <FooterNavigator navigation={navigation} route={route} />
+        {/* <View style={styles.footerWrapper}>
+          <FooterNavigator navigation={navigation} route={route} />
+        </View> */}
       </View>
     // </ImageBackground>
   );

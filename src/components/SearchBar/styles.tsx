@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   container: {
@@ -7,14 +8,14 @@ const styles = StyleSheet.create({
     verticalAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 30,
+    marginHorizontal: normalize(30),
     width: '100%',
   },
   searchBar: {
     // backgroundColor: 'rgba(76, 0, 0, 0.9)',
-    width: 300,
+    width: normalize(300),
     borderRadius: 10,
-    height: 48,
+    height: normalize(48),
     marginVertical: 20,
     marginHorizontal: 10,
     paddingHorizontal: 8,

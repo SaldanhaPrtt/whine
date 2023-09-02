@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   container: {
-    width: 180,
-    height: 230,
+    width: normalize(160),
+    height: normalize(200),
     // backgroundColor: 'rgba(102, 0, 0, 1)', //660000
     backgroundColor: '#F6F6F6',
     borderRadius: 18,
@@ -30,16 +31,18 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
   },
   image: {
-    width: 85,
-    height: 90,
-    resizeMode: 'contain',
-    marginBottom: 5,
-    borderRadius: 6,
+    width: normalize(60),
+    height: normalize(120),
   },
-  pricesView: {
+  lowerView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '100%',
+  },
+  pricesView: {
     alignItems: 'center',
+  },
+  plusIconView: {
   },
 });
 

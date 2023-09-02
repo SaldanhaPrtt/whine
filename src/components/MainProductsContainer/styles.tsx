@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   label: {
@@ -13,7 +14,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    gap: 30,
+    gap: normalize(10),
+    marginHorizontal: 20,
   },
 });
 

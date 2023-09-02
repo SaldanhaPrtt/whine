@@ -1,11 +1,17 @@
 import { StyleSheet, Dimensions } from 'react-native';
-const { width, height } = Dimensions.get('window');
+import normalize from 'react-native-normalize';
+
+//Reds:
+// Original: rgba(76, 0, 0, 0.9)
+// #960018
+// #800000
+// #7C0A02
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(76, 0, 0, 0.9)', //660000
-    width: 80,
-    height: 80,
-    borderRadius: 10,
+    backgroundColor: 'rgba(150, 0, 24, 1)',
+    width: normalize(80),
+    height: normalize(80),
+    borderRadius: normalize(10),
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 4,
