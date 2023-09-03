@@ -13,9 +13,15 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'rgba(76, 0, 0, 0.9)',
-    fontSize: 12,
+    fontSize: 18,
     textAlign: 'center',
     fontFamily: 'Gotham-Light',
+  },
+  itemsView: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
   },
   price: {
     color: 'rgba(76, 0, 0, 0.9)',
@@ -35,12 +41,16 @@ const styles = StyleSheet.create({
     height: normalize(120),
   },
   lowerView: {
+    marginTop: normalize(5),
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingHorizontal: normalize(20),
     width: '100%',
   },
   pricesView: {
     alignItems: 'center',
+    verticalAlign: 'center',
+    justifyContent: 'center',
   },
   plusIconView: {
   },

@@ -4,10 +4,15 @@ import normalize from "react-native-normalize";
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  lowerContainer: {
     width: normalize(width),
     height: normalize(480),
     bottom: 0,
-    backgroundColor: "#F6F6F6",
+    backgroundColor: "rgba(246,246,246, 1)",
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
     justifyContent: "center",
@@ -34,12 +39,13 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through"
   },
   image: {
-    width: 60,
-    height: 120
+    width: normalize(60, 'width'),
+    height: normalize(120, 'height'),
   },
   lowerView: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    alignItems: "center",
     width: "100%"
   },
   pricesView: {

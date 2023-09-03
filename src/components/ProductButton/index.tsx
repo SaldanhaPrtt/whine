@@ -21,18 +21,19 @@ export default function ProductButton({ navigation, route, text, color, price, o
     navigation.navigate('ProductPage', { text, color, price, oldPrice });
   }
   return (
-    <TouchableHighlight style={[styles.container]}>
-      <View>
+    <TouchableHighlight style={styles.container}>
+      <View style={styles.itemsView}>
         <ImageBackground source={wine_png} style={styles.image} />
         <Text style={styles.label}>{text}</Text>
-        <View style={styles.lowerView} />
-        <View style={styles.pricesView}>
-          <Text style={styles.price}>R$ {price}</Text>
-          <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
+        <View style={styles.lowerView}>
+          <View style={styles.pricesView}>
+            <Text style={styles.price}>R$ {price}</Text>
+            <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
+          </View>
+          <Pressable style={styles.plusIconView} onPress={handlePress}>
+            <PlusIcon />
+          </Pressable>
         </View>
-        <Pressable style={styles.plusIconView} onPress={handlePress}>
-          <PlusIcon />
-        </Pressable>
       </View>
     </TouchableHighlight>
   );

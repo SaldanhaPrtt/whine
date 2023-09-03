@@ -18,7 +18,7 @@ export default function SearchBar({ navigation, route }: Props) {
   return (
     <View style={styles.container}>
       <Searchbar
-        placeholder="Search"
+        placeholder="Procurar"
         // onChangeText={onChangeSearch}
         value={searchQuery}
         style={styles.searchBar}
