@@ -16,7 +16,6 @@ const AppNavigation = () => {
         headerShown: false,
         gestureEnabled: true,
         animationEnabled: true,
-        ...TransitionPresets.SlideFromRightIOS
       }}
     >
       <Stack.Screen 
@@ -38,7 +37,8 @@ const AppNavigation = () => {
         options={{
           headerShown: false,
           gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
+          // gestureDirection: 'horizontal',
+          ...TransitionPresets.BottomSheetAndroid
         }}
       />
       <Stack.Screen 
@@ -51,7 +51,8 @@ const AppNavigation = () => {
         options={{
           headerShown: false,
           gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
+          // gestureDirection: 'horizontal-inverted',
+          ...TransitionPresets.SlideFromRightIOS
         }}
       />
     </Stack.Navigator>

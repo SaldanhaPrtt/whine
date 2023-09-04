@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import styles from './styles';
+import PlusIcon from '../../assets/JSXAssets/PlusIcon';
+import MinusIcon from '../../assets/JSXAssets/MinusIcon';
 
 interface Props {
   label: string;
@@ -17,13 +19,14 @@ export default function ProductInfoContainer({ label, price, oldPrice, image }: 
       </View>
       <View style={styles.lowerContainer}>
         <Text style={styles.label}>{label}</Text>
+        <View style={styles.plusIconView}>
+          <MinusIcon />
+          <PlusIcon />
+        </View>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>
             <Text style={styles.price}>{price}</Text>
             <Text style={styles.oldPrice}>{oldPrice}</Text>
-          </View>
-          <View style={styles.plusIconView}>
-            <Text>+</Text>
           </View>
         </View>
       </View>

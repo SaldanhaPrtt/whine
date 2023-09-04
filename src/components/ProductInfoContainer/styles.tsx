@@ -61,7 +61,9 @@ const styles = StyleSheet.create({
   pricesView: {
     alignItems: "center"
   },
-  plusIconView: {}
+  plusIconView: {
+    flexDirection: "row",
+  },
 });
 
 export default styles;

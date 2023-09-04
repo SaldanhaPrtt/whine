@@ -9,7 +9,6 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
   return (
     <View style={styles.container}>
       <Header navigation={navigation} route={route} />
-      <Text>Product Page</Text>
       <ProductInfoContainer label="Product Label" price="R$ 10,00" oldPrice="R$ 20,00" image={wine_png} />
     </View>
   );
