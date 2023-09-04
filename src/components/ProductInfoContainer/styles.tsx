@@ -8,11 +8,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  upperContainer: {
+    top: 0,
+    width: normalize(width),
+    height: normalize(400),
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    borderTopLeftRadius: normalize(50),
+    borderTopRightRadius: normalize(50),
+  },
   lowerContainer: {
     width: normalize(width),
-    height: normalize(480),
+    height: normalize(400),
     bottom: 0,
-    backgroundColor: "rgba(246,246,246, 1)",
+    backgroundColor: "rgba(236,236,236, 1)",
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
     justifyContent: "center",
@@ -21,9 +31,9 @@ const styles = StyleSheet.create({
   },
   label: {
     color: "rgba(76, 0, 0, 0.9)",
-    fontSize: 12,
+    fontSize: 24,
     textAlign: "center",
-    fontFamily: "Gotham-Light"
+    fontFamily: "Gotham-Medium"
   },
   price: {
     color: "rgba(76, 0, 0, 0.9)",
@@ -39,8 +49,8 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through"
   },
   image: {
-    width: normalize(60, 'width'),
-    height: normalize(120, 'height'),
+    width: normalize(200, 'width'),
+    height: normalize(240, 'height'),
   },
   lowerView: {
     flexDirection: "row",
