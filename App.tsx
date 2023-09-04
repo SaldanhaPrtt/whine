@@ -5,6 +5,7 @@ import {
   StatusBar,
   Platform,
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 
 import 'react-native-gesture-handler';
@@ -41,11 +42,14 @@ function App() {
 export default App;
 
 const StatusBarHeight = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0;
+const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: -StatusBarHeight,
     marginBottom: -StatusBarHeight,
+    height: Platform.OS === 'ios' ? height : 'auto',
+    position: Platform.OS === 'ios' ? 'absolute' : 'relative',
   },
 });

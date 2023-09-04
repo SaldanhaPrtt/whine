@@ -7,7 +7,6 @@ import Header from '../../components/Header';
 export default function Profile({navigation, route} : any) {
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} route={route} />
       <Text>Profile</Text>
     </View>
   );

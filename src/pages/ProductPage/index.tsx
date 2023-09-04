@@ -8,7 +8,6 @@ import wine_png from '../../assets/PNG/wine_png.png';
 export default function ProductPage({ navigation, route }: { navigation: any, route: any }) {
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} route={route} />
       <ProductInfoContainer label="Product Label" price="R$ 10,00" oldPrice="R$ 20,00" image={wine_png} />
     </View>
   );

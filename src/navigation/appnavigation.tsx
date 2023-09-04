@@ -6,14 +6,19 @@ import Profile from '../pages/Profile';
 import RegisterWhine from '../pages/RegisterWhine';
 import PickNavigation from './PickNavigation';
 import ProductPage from '../pages/ProductPage';
+import Cart from '../pages/Cart';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
 const AppNavigation = () => {
+  const navigation = useNavigation();
+  const route = navigation.getState() ? navigation.getState().routes[0] : null;
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        header: () => <Header navigation={navigation} route={route} />,
+        headerShown: true,
         gestureEnabled: true,
         animationEnabled: true,
       }}
@@ -22,7 +27,8 @@ const AppNavigation = () => {
         name="Home"
         component={Home}
         options={{
-          headerShown: false,
+          header: () => <Header navigation={navigation} route={route} />,
+          headerShown: true,
           gestureEnabled: true,
           gestureDirection: 'horizontal-inverted'
         }}
@@ -35,7 +41,8 @@ const AppNavigation = () => {
         name="Profile"
         component={Profile}
         options={{
-          headerShown: false,
+          header: () => <Header navigation={navigation} route={route} />,
+          headerShown: true,
           gestureEnabled: true,
           // gestureDirection: 'horizontal',
           ...TransitionPresets.BottomSheetAndroid
@@ -49,7 +56,19 @@ const AppNavigation = () => {
         name="ProductPage"
         component={ProductPage}
         options={{
-          headerShown: false,
+          header: () => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          // gestureDirection: 'horizontal-inverted',
+          ...TransitionPresets.SlideFromRightIOS
+        }}
+      />
+      <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          header: () => <Header navigation={navigation} route={route} />,
+          headerShown: true,
           gestureEnabled: true,
           // gestureDirection: 'horizontal-inverted',
           ...TransitionPresets.SlideFromRightIOS

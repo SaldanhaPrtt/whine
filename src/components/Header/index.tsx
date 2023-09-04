@@ -15,9 +15,11 @@ export default function Header({navigation, route}: {navigation: any, route: any
         </Pressable>
       </View>
       <View>
-        <Text style={styles.title}>Home</Text>
+        <Text style={styles.title}></Text>
       </View>
-      <BagIcon />
+      <Pressable onPress={() => navigation.navigate('Cart')}>
+        <BagIcon />
+      </Pressable>
     </View>
   );
 }

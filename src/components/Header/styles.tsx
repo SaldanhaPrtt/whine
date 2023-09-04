@@ -3,12 +3,12 @@ import normalize from "react-native-normalize";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: normalize(40),
+    // marginTop: normalize(40),
     paddingHorizontal: normalize(20),
     width: "100%",
     // height: 90,
     alignItems: "center",
-    // backgroundColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
     flexDirection: "row",
     justifyContent: "space-between",
   },

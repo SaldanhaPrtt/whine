@@ -20,7 +20,7 @@ export default function Home({ navigation, route }: any) {
   return (
     // <ImageBackground source={bg4} style={styles.bgImage} blurRadius={1}>
       <View style={styles.container}>
-        <Header navigation={navigation} route={route} />
+        {/* <Header navigation={navigation} route={route} /> */}
         <SearchBar navigation={navigation} route={route} />
         <View style={styles.scrollWrapper}>
           <TypesBar />

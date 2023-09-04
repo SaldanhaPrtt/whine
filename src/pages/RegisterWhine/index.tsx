@@ -32,7 +32,6 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
 
   return (
     <View style={styles.container}>
-      <Header />
       <Text style={styles.title}>Register Whine</Text>
       <View style={styles.inputContainer}>
       <CircleButton
