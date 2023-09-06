@@ -6,6 +6,11 @@ import OptionsIcon from '../../assets/JSXAssets/OptionsIcon';
 import BagIcon from '../../assets/JSXAssets/BagIcon';
 import styles from './styles';
 
+type HeaderProps = {
+  navigation: any;
+  route: any;
+};
+
 export default function Header({navigation, route}: {navigation: any, route: any}) {
   return (
     <View style={styles.container}>

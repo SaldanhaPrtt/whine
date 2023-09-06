@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 
 const AppNavigation = () => {
   const navigation = useNavigation();
-  const route = navigation.getState() ? navigation.getState().routes[0] : null;
+  const route = useNavigation().getState();
   return (
     <Stack.Navigator
       screenOptions={{

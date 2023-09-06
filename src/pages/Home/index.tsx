@@ -18,20 +18,17 @@ import FooterNavigator from '../../components/FooterNavigator';
 
 export default function Home({ navigation, route }: any) {
   return (
-    // <ImageBackground source={bg4} style={styles.bgImage} blurRadius={1}>
-      <View style={styles.container}>
-        {/* <Header navigation={navigation} route={route} /> */}
-        <SearchBar navigation={navigation} route={route} />
-        <View style={styles.scrollWrapper}>
-          <TypesBar />
-        </View>
-        {/* <PromoBanner />
-        <PickForYouBanner navigation={navigation} /> */}
-        <ProductsContainer navigation={navigation} route={route} />
-        {/* <View style={styles.footerWrapper}>
-          <FooterNavigator navigation={navigation} route={route} />
-        </View> */}
+    <View style={styles.container}>
+      <SearchBar navigation={navigation} route={route} />
+      <View style={styles.scrollWrapper}>
+        <TypesBar />
       </View>
-    // </ImageBackground>
+      {/* <PromoBanner />
+      <PickForYouBanner navigation={navigation} /> */}
+      <ProductsContainer navigation={navigation} route={route} />
+      {/* <View style={styles.footerWrapper}>
+        <FooterNavigator navigation={navigation} route={route} />
+      </View> */}
+    </View>
   );
 }
