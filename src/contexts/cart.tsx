@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext({});
 
@@ -36,4 +36,12 @@ export const CartProvider = ({ children }: any) => {
       {children}
     </CartContext.Provider>
   );
+};
+
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be within an CartProvider');
+  }
+  return context;
 };

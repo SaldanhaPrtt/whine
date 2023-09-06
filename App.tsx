@@ -13,6 +13,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
+import { CartProvider } from './src/contexts/cart';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -32,9 +33,11 @@ function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden={true} barStyle="light-content" translucent={true}/>
-      <NavigationContainer theme={navTheme}>
-        <AppNavigation />
-      </NavigationContainer>
+      <CartProvider>
+        <NavigationContainer theme={navTheme}>
+          <AppNavigation />
+        </NavigationContainer>
+      </CartProvider>
     </SafeAreaView>
   );
 }
