@@ -4,6 +4,7 @@ import MainLogo from '../../assets/JSXAssets/MainLogo';
 import ProfileIcon from '../../assets/JSXAssets/ProfileIcon';
 import OptionsIcon from '../../assets/JSXAssets/OptionsIcon';
 import BagIcon from '../../assets/JSXAssets/BagIcon';
+import ArrowToLeft from '../../assets/JSXAssets/ArrowToLeft';
 import styles from './styles';
 
 type HeaderProps = {
@@ -12,11 +13,18 @@ type HeaderProps = {
 };
 
 export default function Header({navigation, route}: {navigation: any, route: any}) {
+  const handleLeftButton = () => {
+    if (route.name === 'Home') {
+      navigation.navigate('Profile');
+    } else {
+      navigation.goBack();
+    } 
+  }
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Pressable onPress={() => navigation.navigate('Profile')}>
-          <OptionsIcon />
+        <Pressable onPress={handleLeftButton}>
+        {route.name === 'Home' ? <OptionsIcon /> : <ArrowToLeft />}
         </Pressable>
       </View>
       <View>

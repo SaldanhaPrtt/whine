@@ -17,7 +17,7 @@ const AppNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        header: () => <Header navigation={navigation} route={route} />,
+        header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
         headerShown: true,
         gestureEnabled: true,
         animationEnabled: true,
@@ -27,7 +27,7 @@ const AppNavigation = () => {
         name="Home"
         component={Home}
         options={{
-          header: () => <Header navigation={navigation} route={route} />,
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
           gestureDirection: 'horizontal-inverted'
@@ -36,12 +36,19 @@ const AppNavigation = () => {
       <Stack.Screen 
         name="Pick" 
         component={PickNavigation}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          // gestureDirection: 'horizontal-inverted',
+          ...TransitionPresets.SlideFromRightIOS
+        }}
       />
       <Stack.Screen 
         name="Profile"
         component={Profile}
         options={{
-          header: () => <Header navigation={navigation} route={route} />,
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
           // gestureDirection: 'horizontal',
@@ -51,12 +58,19 @@ const AppNavigation = () => {
       <Stack.Screen 
         name="RegisterWhine"
         component={RegisterWhine}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          // gestureDirection: 'horizontal-inverted',
+          ...TransitionPresets.SlideFromRightIOS
+        }}
       />
       <Stack.Screen
         name="ProductPage"
         component={ProductPage}
         options={{
-          header: () => <Header navigation={navigation} route={route} />,
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
           // gestureDirection: 'horizontal-inverted',
@@ -67,7 +81,7 @@ const AppNavigation = () => {
         name="Cart"
         component={Cart}
         options={{
-          header: () => <Header navigation={navigation} route={route} />,
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
           // gestureDirection: 'horizontal-inverted',
