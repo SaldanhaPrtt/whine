@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Pressable } from 'react-native';
 import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import MinusIcon from '../../assets/JSXAssets/MinusIcon';
+import { useCart } from '../../contexts/cart';
 
 interface Props {
   label: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export default function ProductInfoContainer({ label, price, oldPrice, image }: Props) {
+  const { addToCart, removeFromCart }: any = useCart();
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
@@ -20,8 +22,12 @@ export default function ProductInfoContainer({ label, price, oldPrice, image }: 
       <View style={styles.lowerContainer}>
         <Text style={styles.label}>{label}</Text>
         <View style={styles.plusIconView}>
+        <Pressable onPress={addToCart}>
           <MinusIcon />
+        </Pressable>
+        <Pressable onPress={removeFromCart}>
           <PlusIcon />
+        </Pressable>
         </View>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>

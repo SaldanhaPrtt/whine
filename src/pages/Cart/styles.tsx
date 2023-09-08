@@ -54,6 +54,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderRadius: normalize(10),
     },
+    emptyText: {
+        fontSize: normalize(20),
+        fontWeight: 'bold',
+        color: 'rgba(76, 0, 0, 0.9)'
+    },
 });
 
 export default styles;
