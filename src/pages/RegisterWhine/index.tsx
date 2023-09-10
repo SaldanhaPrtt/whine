@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import CircleButton from '../../components/TypeButton';
 import { insertWine } from '../../services/SQLite/Wines';
 import { Button, TextInput } from 'react-native-paper';
-import { getDatabase } from '../../services/SQLite/SQLite';
+import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
 
 type Wine = {
   name: string;
@@ -47,17 +47,19 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
     });
   };
 
-  const handleRegister = () => {
-    const db = getDatabase();
+  const handleRegister =  async () => {
+    const db = await getDatabase();
+    console.log('db', db);
     const wine: Wine = {
-      name,
-      year,
-      grapes,
-      country,
-      region,
-      description,
-      picture,
+      name: name,
+      year: year,
+      grapes: grapes,
+      country: country,
+      region: region,
+      description: description,
+      picture: 'picture',
     };
+    await closeDatabase(db as any);
     insertWine(db, wine);
   }
 
@@ -105,7 +107,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         <Pressable style={styles.button} onPress={handleChoosePhoto}>
           <Text style={styles.buttonText}>Choose Photo</Text>
         </Pressable>
-        <Button mode="contained" onPress={() => {handleRegister}}>
+        <Button mode="contained" onPress={handleRegister}>
           Register
         </Button>
       </View>

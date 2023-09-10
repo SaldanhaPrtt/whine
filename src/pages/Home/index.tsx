@@ -6,16 +6,8 @@ import PromoBanner from '../../components/PromoBanner';
 import PickForYouBanner from '../../components/PickForYouBanner';
 import ProductsContainer from '../../components/MainProductsContainer';
 import styles from './styles';
-import Header from '../../components/Header';
-import { useNavigation } from '@react-navigation/native';
-import bg2 from '../../assets/PNG/bg2.webp';
-import bg4 from '../../assets/PNG/bg4.jpg';
-import bg5 from '../../assets/PNG/bg5.jpg';
-import bg6 from '../../assets/PNG/bg6.jpg';
-import { LinearGradient } from 'react-native-svg';
 import SearchBar from '../../components/SearchBar';
-import FooterNavigator from '../../components/FooterNavigator';
-import { createWinesTable } from '../../services/SQLite/Wines';
+import { createWinesTable, getWines } from '../../services/SQLite/Wines';
 import { getDatabase } from '../../services/SQLite/SQLite';
 
 export default function Home({ navigation, route }: any) {
@@ -31,6 +23,13 @@ export default function Home({ navigation, route }: any) {
       createTable();
     }
   }, []);
+
+  const getAllWines = async () => {
+    const db = await getDatabase();
+    const wines = await getWines(db);
+    console.log('wines', wines);
+  }
+  
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />

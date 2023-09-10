@@ -28,6 +28,7 @@ async function createWinesTable(db: any) {
 }
 
 async function insertWine(db: any, wine: Wine) {
+  console.log('inserting wine', wine);
   const result: string[] = [
     wine.name,
     wine.year,
