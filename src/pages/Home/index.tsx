@@ -15,8 +15,22 @@ import bg6 from '../../assets/PNG/bg6.jpg';
 import { LinearGradient } from 'react-native-svg';
 import SearchBar from '../../components/SearchBar';
 import FooterNavigator from '../../components/FooterNavigator';
+import { createWinesTable } from '../../services/SQLite/Wines';
+import { getDatabase } from '../../services/SQLite/SQLite';
 
 export default function Home({ navigation, route }: any) {
+  const [databaseCreated, setDatabaseCreated] = React.useState(false);
+  React.useEffect(() => {
+    if (!databaseCreated) {
+      async function createTable() {
+        const db = await getDatabase();
+        console.log('Creating table');
+        createWinesTable(db);
+        setDatabaseCreated(true);
+      }
+      createTable();
+    }
+  }, []);
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />

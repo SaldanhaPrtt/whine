@@ -3,11 +3,14 @@ import React, { createContext, useContext, useState } from 'react';
 const CartContext = createContext({});
 
 type Cart = {
-  id: string,
-  name: string,
-  price: number,
-  oldPrice: number,
-  quantity: number,
+  id: string;
+  name: string;
+  year: string;
+  grapes: string;
+  country: string;
+  region: string;
+  description: string;
+  picture: string;
 }
 
 export const CartProvider = ({ children }: any) => {

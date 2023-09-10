@@ -64,6 +64,23 @@ const styles = StyleSheet.create({
   plusIconView: {
     flexDirection: "row",
   },
+  descriptionContainer: {
+    width: normalize(width),
+    height: normalize(400),
+    bottom: 0,
+    backgroundColor: "rgba(236,236,236, 1)",
+    borderTopLeftRadius: normalize(50),
+    borderTopRightRadius: normalize(50),
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+  },
+  descriptionText: {
+    color: "rgba(76, 0, 0, 0.9)",
+    fontSize: 24,
+    textAlign: "center",
+    fontFamily: "Gotham-Medium"
+  },
 });
 
 export default styles;

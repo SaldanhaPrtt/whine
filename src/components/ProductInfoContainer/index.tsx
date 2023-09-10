@@ -34,6 +34,10 @@ export default function ProductInfoContainer({ label, price, oldPrice, image }: 
             <Text style={styles.price}>{price}</Text>
             <Text style={styles.oldPrice}>{oldPrice}</Text>
           </View>
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.descriptionText}>Detalhes</Text>
+            <Text style={styles.descriptionText}>Descrição</Text>
+          </View>
         </View>
       </View>
     </View>
