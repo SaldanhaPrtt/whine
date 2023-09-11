@@ -8,8 +8,7 @@ import { Button } from 'react-native-paper';
 export default function Profile({navigation, route} : any) {
   return (
     <View style={styles.container}>
-      <Text>Seu Perfil</Text>
-      <Button onPress={() => navigation.navigate('RegisterWhine')}>Home</Button>
+      <Button mode='contained-tonal' onPress={() => navigation.navigate('RegisterWhine')}>Registrar Vinho</Button>
     </View>
   );
 }
