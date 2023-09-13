@@ -7,8 +7,8 @@ function WineGlassIcon({color}: {color?: string}) {
   return (
     <View style={{ width: 100, height: 100, backgroundColor: 'white' }}>
       <Svg
-        width="200"
-        height="200"
+        width="100"
+        height="100"
         viewBox="0 0 794 630"
       >
         <Path

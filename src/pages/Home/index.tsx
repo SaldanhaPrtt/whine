@@ -9,6 +9,7 @@ import styles from './styles';
 import SearchBar from '../../components/SearchBar';
 import { createWinesTable, getWines } from '../../services/SQLite/Wines';
 import { getDatabase } from '../../services/SQLite/SQLite';
+import ColorsBar from '../../components/ColorsBar';
 
 export default function Home({ navigation, route }: any) {
   return (
@@ -16,6 +17,9 @@ export default function Home({ navigation, route }: any) {
       <SearchBar navigation={navigation} route={route} />
       <View style={styles.scrollWrapper}>
         <TypesBar />
+      </View>
+      <View style={styles.scrollWrapper}>
+        <ColorsBar />
       </View>
       {/* <PromoBanner />
       <PickForYouBanner navigation={navigation} /> */}
