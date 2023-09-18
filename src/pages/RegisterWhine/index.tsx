@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, ScrollView } from 'react-native';
 
 import * as ImagePicker from 'react-native-image-picker';
 
@@ -7,8 +7,9 @@ import styles from './styles';
 import Header from '../../components/Header';
 import CircleButton from '../../components/TypeButton';
 import { insertWine } from '../../services/SQLite/Wines';
-import { Button, TextInput } from 'react-native-paper';
+import { Button, TextInput, Checkbox } from 'react-native-paper';
 import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
+import Toast from 'react-native-toast-message';
 
 type Wine = {
   name: string;
@@ -24,8 +25,8 @@ type Wine = {
 
 export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
   const [name, setName] = useState('');
-  const [price, setPrice] = useState(0);
-  const [oldPrice, setOldPrice] = useState(0)
+  const [price, setPrice] = useState('');
+  const [oldPrice, setOldPrice] = useState('')
   const [year, setYear] = useState('');
   const [grapes, setGrapes] = useState('');
   const [country, setCountry] = useState('');
@@ -43,7 +44,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   };
 
   const handleChoosePhoto = (mode: string) => {
-    if (mode === 'camera') {
+    if (mode !== 'camera') {
       ImagePicker.launchImageLibrary(options as any, (response: any) => {
         if (response.didCancel) {
           console.log('User cancelled image picker');
@@ -63,11 +64,12 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   };
 
   const handleRegister =  async () => {
+    if(name && price && oldPrice && year && grapes && country && region && description && picture) {
     const db = await getDatabase();
     const wine: Wine = {
       name: name,
-      price: price,
-      oldPrice: oldPrice,
+      price: parseFloat(price),
+      oldPrice: parseFloat(oldPrice),
       year: year,
       grapes: grapes,
       country: country,
@@ -77,13 +79,19 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
     };
     await closeDatabase(db as any);
     await insertWine(db, wine);
+  } else {
+    Toast.show({
+      type: 'error',
+      text1: 'Campos imcompletos',
+    });
+  }
   }
 
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register Whine</Text>
-      <View style={styles.inputContainer}>
+      <ScrollView style={styles.inputContainer}>
         <TextInput
           style={styles.input}
           onChangeText={(text) => setName(text)}
@@ -93,15 +101,16 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         <TextInput
           style={styles.input}
           keyboardType='numeric'
-          onChangeText={(text) => setPrice(text as any)}
-          value={price as any}
-          placeholder="Nome"
+          onChangeText={(text) => setPrice(text)}
+          value={price}
+          placeholder="Preço"
         />
         <TextInput
           style={styles.input}
-          onChangeText={(text) => setOldPrice(text as any)}
-          value={name as any}
-          placeholder="Nome"
+          keyboardType='numeric'
+          onChangeText={(text) => setOldPrice(text)}
+          value={oldPrice}
+          placeholder="Preço Antigo"
         />
         <TextInput
           style={styles.input}
@@ -111,6 +120,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         />
         <TextInput
           style={styles.input}
+          keyboardType='numeric'
           onChangeText={(text) => setYear(text)}
           value={year}
           placeholder="Ano"
@@ -142,7 +152,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         <Button mode="contained" onPress={handleRegister}>
           Salvar
         </Button>
-      </View>
+      </ScrollView>
     </View>
   );
 }

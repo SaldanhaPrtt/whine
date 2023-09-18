@@ -13,13 +13,16 @@ import 'react-native-gesture-handler';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
 import SystemNavigationBar from 'react-native-system-navigation-bar';
+import ExtraDimensions from 'react-native-extra-dimensions-android';
 import { CartProvider } from './src/contexts/cart';
+import { createWinesTable } from './src/services/SQLite/Wines';
+import { closeDatabase, getDatabase } from './src/services/SQLite/SQLite';
+import Toast from 'react-native-toast-message';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 StatusBar.setHidden(true);
-SystemNavigationBar.navigationHide();
 
 const navTheme = {
   ...DefaultTheme,
@@ -28,6 +31,14 @@ const navTheme = {
     background: 'transparent',
   },
 };
+
+const createTables = async () => {
+  const db = await getDatabase();
+  await createWinesTable(db);
+  await closeDatabase(db as any);
+}
+
+createTables();
 
 function App() {
   return (
@@ -38,21 +49,20 @@ function App() {
           <AppNavigation />
         </NavigationContainer>
       </CartProvider>
+      <Toast />
     </SafeAreaView>
   );
 }
 
 export default App;
 
+const softBarHeight = ExtraDimensions.getSoftMenuBarHeight();
 const StatusBarHeight = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0;
-const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: -StatusBarHeight,
-    marginBottom: -StatusBarHeight,
-    height: Platform.OS === 'ios' ? height : 'auto',
-    position: Platform.OS === 'ios' ? 'absolute' : 'relative',
+    marginBottom: -StatusBarHeight - softBarHeight,
   },
 });

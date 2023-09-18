@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, Animated } from 'react-native';
 import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import MinusIcon from '../../assets/JSXAssets/MinusIcon';
@@ -20,7 +20,7 @@ export default function ProductInfoContainer({ label, price, oldPrice, image }: 
       <View style={styles.upperContainer}>
         <Image source={image} style={styles.image} />
       </View>
-      <View style={styles.lowerContainer}>
+      <Animated.View style={styles.lowerContainer}>
         <View style={styles.lowerContainerHeader}>
           <View style={styles.labelView}>
             <Text style={styles.price}>{price}</Text>
@@ -45,7 +45,7 @@ export default function ProductInfoContainer({ label, price, oldPrice, image }: 
             Nibh cras pulvinar mattis nunc sed blandit.
           </Text>
         </View>
-      </View>
+      </Animated.View>
     </View>
   );
 };

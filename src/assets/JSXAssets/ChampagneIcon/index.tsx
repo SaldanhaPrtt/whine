@@ -4,8 +4,8 @@ import { Svg, Path } from "react-native-svg";
 function ChampagneIcon() {
   return (
     <Svg
-      width="100"
-      height="100"
+      width="60"
+      height="60"
       viewBox="0 0 512 512"
     >
       <Path
