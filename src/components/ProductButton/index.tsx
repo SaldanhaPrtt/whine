@@ -8,23 +8,22 @@ import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 type Props = {
   navigation: any;
   route: any;
-  text: string;
-  color: string;
+  name: string;
   price: number;
   oldPrice?: number;
 };
 
-export default function ProductButton({ navigation, route, text, color, price, oldPrice }: Props) {
+export default function ProductButton({ navigation, route, name, price, oldPrice }: Props) {
 
   const handlePress = () => {
-    console.log(`You clicked ${text} button`);
-    navigation.navigate('ProductPage', { text, color, price, oldPrice });
+    console.log(`You clicked ${name} button`);
+    navigation.navigate('ProductPage', { name, price, oldPrice });
   }
   return (
     <TouchableHighlight style={styles.container}>
       <View style={styles.itemsView}>
         <ImageBackground source={wine_png} style={styles.image} />
-        <Text style={styles.label}>{text}</Text>
+        <Text style={styles.label}>{name}</Text>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>
             <Text style={styles.price}>R$ {price}</Text>

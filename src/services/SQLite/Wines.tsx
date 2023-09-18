@@ -46,7 +46,7 @@ async function insertWine(db: any, wine: Wine) {
   ];
   await runTransactionQuery(
     db,
-    `INSERT INTO wines (name, year, grapes, country, region, description, picture) VALUES (?, ?, ?, ?, ?, ?, ?);`,
+    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
     result as any,
   );
 }
@@ -56,8 +56,9 @@ async function getAllWines(db: any) {
     db,
     `SELECT * FROM wines;`,
   ) as any;
-
+  console.log('result', result)
   const wines = result?.rows?.raw();
+  console.log('wines in db', wines)
 
   return wines as Wine[];
 }

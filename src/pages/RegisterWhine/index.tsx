@@ -49,7 +49,8 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         if (response.didCancel) {
           console.log('User cancelled image picker');
         } else {
-          setPicture(response.uri);
+          console.log('response image', response.assets[0].uri)
+          setPicture(response.assets[0].uri);
         }
       });
     } else {
@@ -57,13 +58,14 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         if (response.didCancel) {
           console.log('User cancelled image picker');
         } else {
-          setPicture(response.uri);
+          setPicture(response.assets[0].uri);
         }
       });
     }
   };
 
   const handleRegister =  async () => {
+    console.log(name, price, oldPrice ,year, grapes, country, region, description, picture)
     if(name && price && oldPrice && year && grapes && country && region && description && picture) {
     const db = await getDatabase();
     const wine: Wine = {
@@ -77,8 +79,8 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
       description: description,
       picture: picture,
     };
-    await closeDatabase(db as any);
     await insertWine(db, wine);
+    await closeDatabase(db as any);
   } else {
     Toast.show({
       type: 'error',
@@ -149,7 +151,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
         <Pressable style={styles.button} onPress={() => handleChoosePhoto('camera')}>
           <Text style={styles.buttonText}>Tirar Foto</Text>
         </Pressable>
-        <Button mode="contained" onPress={handleRegister}>
+        <Button mode="contained" onPress={() => handleRegister()}>
           Salvar
         </Button>
       </ScrollView>
