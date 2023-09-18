@@ -11,7 +11,7 @@ type Props = {
   text: string;
   color: string;
   price: number;
-  oldPrice: number;
+  oldPrice?: number;
 };
 
 export default function ProductButton({ navigation, route, text, color, price, oldPrice }: Props) {

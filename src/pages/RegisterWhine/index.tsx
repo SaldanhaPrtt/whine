@@ -12,6 +12,8 @@ import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
 
 type Wine = {
   name: string;
+  price: number;
+  oldPrice?: number;
   year: string;
   grapes: string;
   country: string;
@@ -22,6 +24,8 @@ type Wine = {
 
 export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
   const [name, setName] = useState('');
+  const [price, setPrice] = useState(0);
+  const [oldPrice, setOldPrice] = useState(0)
   const [year, setYear] = useState('');
   const [grapes, setGrapes] = useState('');
   const [country, setCountry] = useState('');
@@ -34,33 +38,45 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
     storageOptions: {
       skipBackup: true,
       path: 'images',
+      includeBase64: true,
     },
   };
 
-  const handleChoosePhoto = () => {
-    ImagePicker.launchImageLibrary(options as any, (response: any) => {
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else {
-        setPicture(response.uri);
-      }
-    });
+  const handleChoosePhoto = (mode: string) => {
+    if (mode === 'camera') {
+      ImagePicker.launchImageLibrary(options as any, (response: any) => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else {
+          setPicture(response.uri);
+        }
+      });
+    } else {
+      ImagePicker.launchCamera(options as any, (response: any) => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else {
+          setPicture(response.uri);
+        }
+      });
+    }
   };
 
   const handleRegister =  async () => {
     const db = await getDatabase();
-    console.log('db', db);
     const wine: Wine = {
       name: name,
+      price: price,
+      oldPrice: oldPrice,
       year: year,
       grapes: grapes,
       country: country,
       region: region,
       description: description,
-      picture: 'picture',
+      picture: picture,
     };
     await closeDatabase(db as any);
-    insertWine(db, wine);
+    await insertWine(db, wine);
   }
 
 
@@ -72,43 +88,59 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
           style={styles.input}
           onChangeText={(text) => setName(text)}
           value={name}
-          placeholder="Title"
+          placeholder="Nome"
+        />
+        <TextInput
+          style={styles.input}
+          keyboardType='numeric'
+          onChangeText={(text) => setPrice(text as any)}
+          value={price as any}
+          placeholder="Nome"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => setOldPrice(text as any)}
+          value={name as any}
+          placeholder="Nome"
         />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setDescription(text)}
           value={description}
-          placeholder="Description"
+          placeholder="Descrição"
         />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setYear(text)}
           value={year}
-          placeholder="Year"
+          placeholder="Ano"
         />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setGrapes(text)}
           value={grapes}
-          placeholder="Grapes"
+          placeholder="Uva(s)"
         />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setCountry(text)}
           value={country}
-          placeholder="Country"
+          placeholder="País"
         />
         <TextInput
           style={styles.input}
           onChangeText={(text) => setRegion(text)}
           value={region}
-          placeholder="Region"
+          placeholder="Região"
         />
-        <Pressable style={styles.button} onPress={handleChoosePhoto}>
-          <Text style={styles.buttonText}>Choose Photo</Text>
+        <Pressable style={styles.button} onPress={() => handleChoosePhoto('library')}>
+          <Text style={styles.buttonText}>Escolher Imagem</Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={() => handleChoosePhoto('camera')}>
+          <Text style={styles.buttonText}>Tirar Foto</Text>
         </Pressable>
         <Button mode="contained" onPress={handleRegister}>
-          Register
+          Salvar
         </Button>
       </View>
     </View>

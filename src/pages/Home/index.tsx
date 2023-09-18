@@ -7,8 +7,6 @@ import PickForYouBanner from '../../components/PickForYouBanner';
 import ProductsContainer from '../../components/MainProductsContainer';
 import styles from './styles';
 import SearchBar from '../../components/SearchBar';
-import { createWinesTable, getWines } from '../../services/SQLite/Wines';
-import { getDatabase } from '../../services/SQLite/SQLite';
 import ColorsBar from '../../components/ColorsBar';
 
 export default function Home({ navigation, route }: any) {
