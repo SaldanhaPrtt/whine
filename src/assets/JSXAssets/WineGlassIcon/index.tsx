@@ -5,7 +5,7 @@ import { Svg, Path } from "react-native-svg";
 function WineGlassIcon({color}: {color?: string}) {
   const localColor = color || 'black';
   return (
-    <View style={{ width: 100, height: 100, backgroundColor: 'white' }}>
+    <View style={{ width: 100, height: 100 }}>
       <Svg
         width="100"
         height="100"

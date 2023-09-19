@@ -24,11 +24,10 @@ export default function ColorsBar() {
     <ScrollView 
       style={styles.container} 
       horizontal={true}
-      showsHorizontalScrollIndicator={true}
+      showsHorizontalScrollIndicator={false}
       snapToInterval={normalize(90)}
       scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
       overScrollMode='never'
-      indicatorStyle='black'
     >
       <ColorsButton image={<WineGlassIcon color='red'/> as any} text="Tinto"  onPress={OnPress} />
       <ColorsButton image={<WineGlassIcon color='pink'/> as any} text="Rose"  onPress={OnPress} />

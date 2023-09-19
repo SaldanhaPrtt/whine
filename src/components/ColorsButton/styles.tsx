@@ -15,9 +15,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 4,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.4)',
-    shadowColor: 'rgba(255, 255, 255, 1)',
+    backgroundColor: 'rgba(246, 246, 246, 1)',
+    shadowColor: 'rgba(200, 200, 200, 1)',
     shadowRadius: 10,
     shadowOffset: {
       width: 0,
