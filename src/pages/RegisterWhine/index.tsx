@@ -36,6 +36,9 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
 
   const options = {
     title: 'Select Image',
+    maxHeight: 300,
+    maxWidth: 300,
+    saveToPhotos: true,
     storageOptions: {
       skipBackup: true,
       path: 'images',
