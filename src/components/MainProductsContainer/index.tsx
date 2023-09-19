@@ -37,6 +37,8 @@ export default function MainProductsContainer({ navigation, route }: Props) {
     loadData()
   }, []);
 
+  console.log('wines', wines)
+
   return (
     // <View style={styles.container}>
       <ScrollView
@@ -44,12 +46,23 @@ export default function MainProductsContainer({ navigation, route }: Props) {
         contentContainerStyle={styles.scrollContent}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => setRefreshing(true)} />}
       >
-        <ProductButton name="Vinho 1" price={10} image={''} oldPrice={20} navigation={navigation} route={route} />
-        <ProductButton name="Vinho 2" price={10} image={''} oldPrice={20} navigation={navigation} route={route} />
         {wines && wines.length > 0 && (
           wines.map((wine: any) => {
             return(
-              <ProductButton name={wine.name} price={wine.price} image={wine.image} oldPrice={wine.oldPrice ? wine.oldPrice : null} navigation={navigation} route={route} />
+              <ProductButton 
+                key={wine.id}
+                name={wine.name}
+                price={wine.price} 
+                oldPrice={wine.oldPrice}
+                year={wine.year}
+                grapes={wine.grapes}
+                country={wine.country}
+                region={wine.region}
+                description={wine.description}
+                image={wine.image}
+                navigation={navigation} 
+                route={route} 
+              />
             )
           })
         )}

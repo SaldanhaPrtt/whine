@@ -10,7 +10,7 @@ type Wine = {
   country: string;
   region: string;
   description: string;
-  picture: string;
+  image: string;
 };
 
 async function createWinesTable(db: any) {
@@ -26,13 +26,12 @@ async function createWinesTable(db: any) {
       country TEXT NOT NULL,
       region TEXT NOT NULL,
       description TEXT NOT NULL,
-      picture TEXT NOT NULL
+      image TEXT NOT NULL
     );`,
   );
 }
 
 async function insertWine(db: any, wine: Wine) {
-  console.log('inserting wine', wine);
   const result: any[] = [
     wine.name,
     wine.price,
@@ -42,11 +41,11 @@ async function insertWine(db: any, wine: Wine) {
     wine.country,
     wine.region,
     wine.description,
-    wine.picture
+    wine.image
   ];
   await runTransactionQuery(
     db,
-    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
     result as any,
   );
 }
@@ -56,10 +55,7 @@ async function getAllWines(db: any) {
     db,
     `SELECT * FROM wines;`,
   ) as any;
-  console.log('result', result)
   const wines = result?.rows?.raw();
-  console.log('wines in db', wines)
-
   return wines as Wine[];
 }
 
@@ -81,11 +77,11 @@ async function updateWine(db: any, wine: Wine) {
     wine.country,
     wine.region,
     wine.description,
-    wine.picture,
+    wine.image,
   ];
   await runTransactionQuery(
     db,
-    `UPDATE wines SET name = ?, price = ?, oldPrice = ?, year = ?, grapes = ?, country = ?, region = ?, description = ?, picture = ? WHERE id = ?;`,
+    `UPDATE wines SET name = ?, price = ?, oldPrice = ?, year = ?, grapes = ?, country = ?, region = ?, description = ?, image = ? WHERE id = ?;`,
     result as any,
   );
 }

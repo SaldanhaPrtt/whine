@@ -16,7 +16,7 @@ export default function TypesBar() {
   ];
 
   const OnPress = () => {
-    console.log('Pressed');
+
   }
   return (
     <ScrollView 

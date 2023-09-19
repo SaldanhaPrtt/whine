@@ -18,7 +18,7 @@ export default function ColorsBar() {
   ];
 
   const OnPress = () => {
-    console.log('Pressed');
+    
   }
   return (
     <ScrollView 

@@ -62,6 +62,7 @@ const StatusBarHeight = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FFF',
     marginTop: -StatusBarHeight,
     marginBottom: -StatusBarHeight - softBarHeight,
   },

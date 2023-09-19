@@ -4,7 +4,6 @@ import styles from './styles';
 
 export default function PickForYouBanner({navigation}: any) {
   const handlePress = () => {
-    console.log('PickForYouBanner pressed');
     navigation.navigate('Pick');
   }
   return (

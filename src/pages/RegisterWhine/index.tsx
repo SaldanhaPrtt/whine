@@ -20,7 +20,7 @@ type Wine = {
   country: string;
   region: string;
   description: string;
-  picture: string;
+  image: string;
 };
 
 export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
@@ -32,44 +32,46 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
   const [description, setDescription] = useState('');
-  const [picture, setPicture] = useState('');
+  const [image, setImage] = useState('');
 
   const options = {
     title: 'Select Image',
     maxHeight: 300,
     maxWidth: 300,
     saveToPhotos: true,
+    includeBase64: true,
     storageOptions: {
       skipBackup: true,
       path: 'images',
       includeBase64: true,
     },
   };
-
+  //fix this
   const handleChoosePhoto = (mode: string) => {
     if (mode !== 'camera') {
       ImagePicker.launchImageLibrary(options as any, (response: any) => {
         if (response.didCancel) {
-          console.log('User cancelled image picker');
+          return;
         } else {
-          console.log('response image', response.assets[0].uri)
-          setPicture(response.assets[0].uri);
+          const tempImage = response?.assets[0]?.base64;
+          const tempImageBase64 = `data:image/png;base64,${tempImage}`;
+          setImage(tempImageBase64);
         }
       });
     } else {
       ImagePicker.launchCamera(options as any, (response: any) => {
         if (response.didCancel) {
-          console.log('User cancelled image picker');
+          return;
         } else {
-          setPicture(response.assets[0].uri);
-        }
+          const tempImage = response?.assets[0]?.base64;
+          const tempImageBase64 = `data:image/png;base64,${tempImage}`;
+          setImage(tempImageBase64);        }
       });
     }
   };
 
   const handleRegister =  async () => {
-    console.log(name, price, oldPrice ,year, grapes, country, region, description, picture)
-    if(name && price && oldPrice && year && grapes && country && region && description && picture) {
+    if(name && price && oldPrice && year && grapes && country && region && description && image) {
     const db = await getDatabase();
     const wine: Wine = {
       name: name,
@@ -80,7 +82,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
       country: country,
       region: region,
       description: description,
-      picture: picture,
+      image: image,
     };
     await insertWine(db, wine);
     await closeDatabase(db as any);
