@@ -17,6 +17,7 @@ export default function MainProductsContainer({ navigation, route }: Props) {
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const loadData = async () => {
     if(!loaded || refreshing) {
+      try {
       const db = await getDatabase();
       const tempWines = await getAllWines(db);
       if(tempWines) {
@@ -26,6 +27,9 @@ export default function MainProductsContainer({ navigation, route }: Props) {
       await closeDatabase(db);
       setRefreshing(false);
       setLoaded(true);
+    } catch (error) {
+      console.log(error)
+    }
     }
   }
   
@@ -36,8 +40,6 @@ export default function MainProductsContainer({ navigation, route }: Props) {
   useEffect(() => {
     loadData()
   }, []);
-
-  console.log('wines', wines)
 
   return (
     // <View style={styles.container}>
