@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     width: normalize(300),
     borderRadius: 10,
     height: normalize(48),
-    marginVertical: 20,
+    marginBottom: normalize(20),
     marginHorizontal: 10,
     paddingHorizontal: 8,
   },

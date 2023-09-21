@@ -12,8 +12,7 @@ type Props = {
 
 export default function SearchBar({ navigation, route }: Props) {
   const [searchQuery, setSearchQuery] = React.useState('');
-
-//   const onChangeSearch = (query: any) => setSearchQuery(query);
+  const onChangeSearch = (query: any) => setSearchQuery(query);
 
   return (
     <View style={styles.container}>

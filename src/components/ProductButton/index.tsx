@@ -37,7 +37,7 @@ export default function ProductButton({ navigation, route, name, price, oldPrice
   return (
     <TouchableHighlight style={styles.container}>
       <View style={styles.itemsView}>
-        <ImageBackground source={image ? {uri:image} : wine_png} style={styles.image} />
+        <ImageBackground resizeMode='contain' source={image ? {uri:image} : wine_png} style={styles.image} borderRadius={8}/>
         <Text style={styles.label}>{name}</Text>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>

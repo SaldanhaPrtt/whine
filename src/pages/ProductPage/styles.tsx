@@ -5,35 +5,30 @@ import normalize from "react-native-normalize";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   upperContainer: {
     top: 0,
-    width: normalize(width),
-    height: normalize(400),
+    height: normalize(350),
     justifyContent: "center",
     alignItems: "center",
-    position: "absolute",
+    backgroundColor: "rgba(255,255,255, 1)",
   },
   lowerContainer: {
-    width: normalize(width),
-    height: normalize(400),
+    height: normalize(200),
     bottom: 0,
-    backgroundColor: "rgba(236,236,236, 1)",
+    // backgroundColor: "rgba(236,236,236, 1)",
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
-    paddingHorizontal: normalize(40),
+    paddingHorizontal: normalize(30),
     alignItems: "center",
-    position: "absolute",
+    // position: "absolute",
   },
   lowerContainerHeader: {
-    width: normalize(width),
+    width: `100%`,
     height: normalize(100),
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: normalize(40),
   },
   label: {
     color: "rgba(76, 0, 0, 0.9)",
@@ -43,20 +38,27 @@ const styles = StyleSheet.create({
   },
   price: {
     color: "rgba(76, 0, 0, 0.9)",
-    fontSize: 12,
+    fontSize: 24,
     textAlign: "center",
-    fontFamily: "Gotham-Bold"
+    fontFamily: "Gotham-Medium"
   },
   oldPrice: {
     color: "rgba(76, 0, 0, 0.9)",
     fontSize: 12,
     textAlign: "center",
-    fontFamily: "Gotham-Light",
+    fontFamily: "Gotham-Medium",
     textDecorationLine: "line-through"
   },
   image: {
     width: normalize(200, 'width'),
     height: normalize(240, 'height'),
+    shadowColor: "black",
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   pricesView: {
     alignItems: "center"
@@ -66,38 +68,43 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   descriptionContainer: {
-    width: normalize(width),
+    width: `100%`,
     height: normalize(160),
     bottom: 0,
-    backgroundColor: "rgba(236,236,236, 1)",
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    paddingHorizontal: normalize(40),
   },
   descriptionTitle: {
     color: "rgba(76, 0, 0, 0.9)",
     fontSize: 24,
     textAlign: "center",
-    fontFamily: "Gotham-Medium"
+    fontFamily: "Gotham-Medium",
   },
   descriptionText: {
     color: "rgba(76, 0, 0, 0.9)",
-    fontSize: 16,
+    fontSize: 14,
     textAlign: "center",
-    fontFamily: "Gotham-Medium"
+    fontFamily: "Gotham-Book",
   },
   quantity: {
     color: "rgba(76, 0, 0, 0.9)",
     fontSize: 24,
     textAlign: "center",
     fontFamily: "Gotham-Medium",
-    marginHorizontal: normalize(10)
+    marginHorizontal: normalize(10),
+    width: normalize(40),
   },
   labelView: {
     flexDirection: "column",
     alignItems: "flex-start",
+  },
+  detailsContaienr: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: normalize(width),
   },
 });
 

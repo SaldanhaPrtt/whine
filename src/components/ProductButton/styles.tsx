@@ -4,18 +4,18 @@ import normalize from 'react-native-normalize';
 const styles = StyleSheet.create({
   container: {
     width: normalize(160),
-    height: normalize(200),
+    height: normalize(220),
     // backgroundColor: 'rgba(102, 0, 0, 1)', //660000
     backgroundColor: '#F6F6F6',
-    borderRadius: 18,
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderRadius: 8,
+    padding: normalize(20),
   },
   label: {
     color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 18,
-    textAlign: 'center',
-    fontFamily: 'Gotham-Light',
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    fontFamily: 'Gotham-Book',
   },
   itemsView: {
     flexDirection: 'column',
@@ -25,19 +25,19 @@ const styles = StyleSheet.create({
   },
   price: {
     color: 'rgba(76, 0, 0, 0.9)',
-    fontSize: 12,
+    fontSize: 20,
     textAlign: 'center',
-    fontFamily: 'Gotham-Bold',
+    fontFamily: 'Gotham-Medium',
   },
   oldPrice: {
     color: 'rgba(76, 0, 0, 0.9)',
-    fontSize: 12,
+    fontSize: 14,
     textAlign: 'center',
-    fontFamily: 'Gotham-Light',
+    fontFamily: 'Gotham-XLight',
     textDecorationLine: 'line-through',
   },
   image: {
-    width: normalize(60),
+    width: normalize(120),
     height: normalize(120),
   },
   lowerView: {

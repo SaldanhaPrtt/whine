@@ -32,7 +32,6 @@ async function createWinesTable(db: any) {
 }
 
 async function insertWine(db: any, wine: Wine) {
-  console.log(wine);
   const result: any[] = [
     wine.name,
     wine.price,
