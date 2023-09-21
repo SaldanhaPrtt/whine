@@ -70,30 +70,36 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
     }
   };
 
-  const handleRegister =  async () => {
-    if(name && price && oldPrice && year && grapes && country && region && description && image) {
-    const db = await getDatabase();
-    const wine: Wine = {
-      name: name,
-      price: parseFloat(price),
-      oldPrice: parseFloat(oldPrice),
-      year: year,
-      grapes: grapes,
-      country: country,
-      region: region,
-      description: description,
-      image: image,
-    };
-    await insertWine(db, wine);
-    await closeDatabase(db as any);
-  } else {
-    Toast.show({
-      type: 'error',
-      text1: 'Campos imcompletos',
-    });
+  const handleRegister = async () => {
+    if (name && price && oldPrice && year && grapes && country && region && description && image) {
+      try {
+        const db = await getDatabase();
+        const wine: Wine = {
+          name: name,
+          price: parseFloat(price),
+          oldPrice: parseFloat(oldPrice),
+          year: year,
+          grapes: grapes,
+          country: country,
+          region: region,
+          description: description,
+          image: image,
+        };
+        await insertWine(db, wine);
+        await closeDatabase(db as any);
+        Toast.show({
+          type: 'success',
+          text1: 'Vinho cadastrado com sucesso',
+        });
+        navigation.navigate('Home');
+      } catch (error) {
+        Toast.show({
+          type: 'error',
+          text1: 'Erro ao cadastrar vinho',
+        });
+      }
+    }
   }
-  }
-
 
   return (
     <View style={styles.container}>
