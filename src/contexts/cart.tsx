@@ -2,27 +2,33 @@ import React, { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext({});
 
-type Cart = {
+
+type Wine = {
   id: string;
   name: string;
+  price: number;
+  oldPrice?: number;
   year: string;
   grapes: string;
   country: string;
   region: string;
   description: string;
-  picture: string;
-}
+  image: string;
+  quantity: number;
+};
 
 export const CartProvider = ({ children }: any) => {
-  const [products, setProducts] = useState<Cart[]>([]);
+  const [products, setProducts] = useState<Wine[]>([]);
 
-  const addToCart = (product: Cart) => {
+  const addToCart = (product: Wine) => {
+    if (products.find(item => item.id === product.id)) {
+      setProducts(products.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
+    }
     setProducts([...products, product]);
   }
-
+  
   const removeFromCart = (productId: string) => {
-    const newProducts = products.filter(product => product.id !== productId);
-    setProducts(newProducts);
+    setProducts(products.filter(item => item.id !== productId));  
   }
 
   const clearCart = () => {
