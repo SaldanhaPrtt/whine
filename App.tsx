@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -12,11 +12,8 @@ import 'react-native-gesture-handler';
 
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
-import SystemNavigationBar from 'react-native-system-navigation-bar';
 import ExtraDimensions from 'react-native-extra-dimensions-android';
 import { CartProvider } from './src/contexts/cart';
-import { createWinesTable } from './src/services/SQLite/Wines';
-import { closeDatabase, getDatabase } from './src/services/SQLite/SQLite';
 import Toast from 'react-native-toast-message';
 
 type SectionProps = PropsWithChildren<{
@@ -31,14 +28,6 @@ const navTheme = {
     background: 'transparent',
   },
 };
-
-const createTables = async () => {
-  const db = await getDatabase();
-  await createWinesTable(db);
-  await closeDatabase(db as any);
-}
-
-createTables();
 
 function App() {
   return (
@@ -63,7 +52,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    marginTop: -StatusBarHeight,
-    marginBottom: -StatusBarHeight - softBarHeight,
   },
 });

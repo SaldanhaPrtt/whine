@@ -7,6 +7,7 @@ import RegisterWhine from '../pages/RegisterWhine';
 import PickNavigation from './PickNavigation';
 import ProductPage from '../pages/ProductPage';
 import Cart from '../pages/Cart';
+import Login from '../pages/Login';
 import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
@@ -16,6 +17,7 @@ const AppNavigation = () => {
   const route = useNavigation().getState();
   return (
     <Stack.Navigator
+      initialRouteName='Login'
       screenOptions={{
         header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
         headerShown: true,
@@ -23,6 +25,16 @@ const AppNavigation = () => {
         animationEnabled: true,
       }}
     >
+      <Stack.Screen 
+        name="Login"
+        component={Login}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          gestureDirection: 'horizontal-inverted'
+        }}
+      />
       <Stack.Screen 
         name="Home"
         component={Home}

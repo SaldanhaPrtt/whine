@@ -91,12 +91,13 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
           type: 'success',
           text1: 'Vinho cadastrado com sucesso',
         });
-        navigation.navigate('Home');
       } catch (error) {
         Toast.show({
           type: 'error',
           text1: 'Erro ao cadastrar vinho',
         });
+      } finally {
+        navigation.navigate('Home');
       }
     }
   }

@@ -9,6 +9,7 @@ import styles from './styles';
 import SearchBar from '../../components/SearchBar';
 import ColorsBar from '../../components/ColorsBar';
 
+
 export default function Home({ navigation, route }: any) {
   return (
     <View style={styles.container}>
