@@ -15,9 +15,6 @@ import AppNavigation from './src/navigation/AppNavigation';
 import { CartProvider } from './src/contexts/cart';
 import Toast from 'react-native-toast-message';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 StatusBar.setHidden(true);
 
 const navTheme = {
