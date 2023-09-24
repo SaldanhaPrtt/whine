@@ -12,7 +12,6 @@ import 'react-native-gesture-handler';
 
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
-import ExtraDimensions from 'react-native-extra-dimensions-android';
 import { CartProvider } from './src/contexts/cart';
 import Toast from 'react-native-toast-message';
 
@@ -44,9 +43,6 @@ function App() {
 }
 
 export default App;
-
-const softBarHeight = ExtraDimensions.getSoftMenuBarHeight();
-const StatusBarHeight = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0;
 
 const styles = StyleSheet.create({
   container: {

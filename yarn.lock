@@ -1982,11 +1982,6 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-native-extra-dimensions-android@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.0.tgz#50c7e9b252f04ce0c3bc0945ac687a403fe8ec4f"
-  integrity sha512-9lUeO0P/yXBPlR8KjIKttqLXy/zRS0a6tofiCooDRcT2YXWkhVAoXZv7y/5opzUdCORk6eSMkfMRLbRjs8v5Uw==
-
 "@types/react-native-sqlite-storage@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-native-sqlite-storage/-/react-native-sqlite-storage-6.0.0.tgz#3d183123f1200744f84b699704a3221ded4cb04b"
@@ -5617,11 +5612,6 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-extra-dimensions-android@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.5.tgz#8ade91029aaac7519bf305116d39019e618a60f0"
-  integrity sha512-eorFo9X1vEqAWUkgcZ300yKBG1wtgNeE7tdWAH2CE+P50FGTniJg5Sr6l1iPWG8ZskQOuF+KeiSTFlDa4vLfMw==
-
 react-native-gesture-handler@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.12.1.tgz#f11a99fb95169810c6886fad5efa01a17fd81660"
@@ -5693,11 +5683,6 @@ react-native-svg@^13.11.0:
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
-
-react-native-system-navigation-bar@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/react-native-system-navigation-bar/-/react-native-system-navigation-bar-2.6.1.tgz#cead40f7311fe92be4921808901b7b56e9c763d8"
-  integrity sha512-IN5n55sEbA4oAvwUqK8oCfKKc4fXJmBzcqC/Eq8bv26gTwzk6oUiPrHtzJCSJvWyCOCt6jKuc9vDWEFTLDOLog==
 
 react-native-toast-message@^2.1.6:
   version "2.1.6"
