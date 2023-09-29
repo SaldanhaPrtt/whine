@@ -23,14 +23,14 @@ export default function Header({navigation, route}: {navigation: any, route: any
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Pressable onPress={handleLeftButton}>
+        <Pressable onPress={handleLeftButton} style={styles.pressable}>
         {route.name === 'Home' ? <OptionsIcon /> : <ArrowToLeft />}
         </Pressable>
       </View>
       <View>
         <Text style={styles.title}></Text>
       </View>
-      <Pressable onPress={() => navigation.navigate('Cart')}>
+      <Pressable onPress={() => navigation.navigate('Cart')} style={styles.pressable}>
         <BagIcon />
       </Pressable>
     </View>

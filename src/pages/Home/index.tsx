@@ -10,13 +10,16 @@ import SearchBar from '../../components/SearchBar';
 import ColorsBar from '../../components/ColorsBar';
 
 
+//Fazer a barra de países
+//Ver esse funcionamento
+
 export default function Home({ navigation, route }: any) {
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />
-      <View style={styles.scrollWrapper}>
+      {/* <View style={styles.scrollWrapper}>
         <TypesBar />
-      </View>
+      </View> */}
       <View style={styles.scrollWrapper}>
         <ColorsBar />
       </View>

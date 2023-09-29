@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
   },
+  pressable: {
+    width: 48,
+    height: 48,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
 
 export default styles;
