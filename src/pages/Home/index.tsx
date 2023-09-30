@@ -8,7 +8,7 @@ import ProductsContainer from '../../components/MainProductsContainer';
 import styles from './styles';
 import SearchBar from '../../components/SearchBar';
 import ColorsBar from '../../components/ColorsBar';
-
+import CountriesBar from '../../components/CountriesBar';
 
 //Fazer a barra de países
 //Ver esse funcionamento
@@ -20,6 +20,9 @@ export default function Home({ navigation, route }: any) {
       {/* <View style={styles.scrollWrapper}>
         <TypesBar />
       </View> */}
+      <View style={styles.scrollWrapper}>
+        <CountriesBar />
+      </View>
       <View style={styles.scrollWrapper}>
         <ColorsBar />
       </View>

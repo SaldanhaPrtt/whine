@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
+import CountryFlag from "react-native-country-flag";
 
 import styles from './styles';
 
@@ -9,11 +10,11 @@ type Props = {
   onPress: () => void;
 }
 
-export default function ColorsButton({ text, image, onPress }: Props) {
+export default function CountryButton({ text, image, onPress }: Props) {
   return (
     <TouchableHighlight style={[styles.container]} onPress={onPress}>
       <View>
-        {image}
+        <CountryFlag isoCode="de" size={25} />
         <Text style={styles.label}>{text}</Text>
       </View>
     </TouchableHighlight>
