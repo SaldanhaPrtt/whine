@@ -6,15 +6,15 @@ import styles from './styles';
 
 type Props = {
   text: string;
-  image: string;
+  countryCode: string;
   onPress: () => void;
 }
 
-export default function CountryButton({ text, image, onPress }: Props) {
+export default function CountryButton({ text, countryCode, onPress }: Props) {
   return (
     <TouchableHighlight style={[styles.container]} onPress={onPress}>
-      <View>
-        <CountryFlag isoCode="de" size={25} />
+      <View style={styles.innerContainer}>
+        <CountryFlag style={styles.flag} isoCode={countryCode} size={40} />
         <Text style={styles.label}>{text}</Text>
       </View>
     </TouchableHighlight>

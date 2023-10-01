@@ -15,22 +15,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 4,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
-    shadowColor: 'rgba(255, 255, 255, 1)',
+    shadowColor: 'rgba(0, 0, 0, 1)',
     shadowRadius: 10,
     shadowOffset: {
-      width: 0,
+      width: 4,
       height: 4,
     },
     shadowOpacity: 1,
+  },
+  innerContainer: {
+    justifyContent: 'space-between',
   },
   label: {
     color: 'rgba(255, 255, 255, 1)',
     fontSize: 12,
     textAlign: 'center',
     fontFamily: 'Gotham-Medium',
+    marginTop: 10,
   },
+  flag: {
+    borderRadius: 8
+  }
 });
 
 export default styles;

@@ -1,12 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import ColorsButton from '../ColorsButton';
-import CountryButton from '../CountryButton';
 import styles from './styles';
 import normalize from 'react-native-normalize';
 import WineGlassIcon from '../../assets/JSXAssets/WineGlassIcon';
 import ChampagneIcon from '../../assets/JSXAssets/ChampagneIcon';
-import CountryFlag from "react-native-country-flag";
+import CountryButton from '../CountryButton';
 
 interface Props {
   label: string;
@@ -30,10 +28,15 @@ export default function CountriesBar() {
       scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
       overScrollMode='never'
     >
-      <CountryButton image={<WineGlassIcon color='red'/> as any} text="Tinto"  onPress={OnPress} />
-      <CountryButton image={<WineGlassIcon color='pink'/> as any} text="Rose"  onPress={OnPress} />
-      <CountryButton image={<WineGlassIcon color='rgba(160, 160, 0,0.30)'/> as any} text="Branco"  onPress={OnPress} />
-      <CountryButton image={<ChampagneIcon /> as any} text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='br' text="Tinto"  onPress={OnPress} />
+      <CountryButton countryCode='fr' text="Rose"  onPress={OnPress} />
+      <CountryButton countryCode='pt' text="Branco"  onPress={OnPress} />
+      <CountryButton countryCode='hu' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='it' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='us' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='cl' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='ar' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='uy' text="Espumante" onPress={OnPress} />
     </ScrollView>
   );
 }

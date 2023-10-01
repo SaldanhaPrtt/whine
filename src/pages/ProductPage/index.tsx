@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Pressable, Animated } from 'react-native';
 import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
@@ -8,6 +8,11 @@ import { useCart } from '../../contexts/cart';
 export default function ProductPage({ navigation, route }: { navigation: any, route: any }) {
   const { addToCart, removeFromCart }: any = useCart();
   const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    addToCart(route.params.name);
+  }, [quantity]);
+
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>
