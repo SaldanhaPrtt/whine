@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
+import normalize from "react-native-normalize";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    paddingHorizontal: normalize(20),
+    marginTop: normalize(10),
     width: "100%",
-    // height: 90,
+    height: normalize(60, 'height'),
     alignItems: "center",
-    // backgroundColor: "rgba(0, 0, 0, 0.1)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -34,6 +36,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
   },
+  pressable: {
+    width: 48,
+    height: 48,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
 
 export default styles;

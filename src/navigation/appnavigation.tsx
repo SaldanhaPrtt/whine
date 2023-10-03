@@ -5,44 +5,88 @@ import Header from '../components/Header';
 import Profile from '../pages/Profile';
 import RegisterWhine from '../pages/RegisterWhine';
 import PickNavigation from './PickNavigation';
+import ProductPage from '../pages/ProductPage';
+import Cart from '../pages/Cart';
+import Login from '../pages/Login';
 
 const Stack = createStackNavigator();
 
 const AppNavigation = () => {
   return (
     <Stack.Navigator
+      initialRouteName='Home'
       screenOptions={{
-        headerShown: false,
-        gestureEnabled: true,
+        header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+        headerShown: true,
+        gestureEnabled: false,
         animationEnabled: true,
-        ...TransitionPresets.SlideFromRightIOS
       }}
     >
+      <Stack.Screen 
+        name="Login"
+        component={Login}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+        }}
+      />
       <Stack.Screen 
         name="Home"
         component={Home}
         options={{
-          headerShown: false,
-          gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
         }}
       />
       <Stack.Screen 
         name="Pick" 
         component={PickNavigation}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS
+        }}
       />
       <Stack.Screen 
         name="Profile"
         component={Profile}
         options={{
-          headerShown: false,
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
           gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
+          ...TransitionPresets.BottomSheetAndroid
         }}
       />
       <Stack.Screen 
         name="RegisterWhine"
         component={RegisterWhine}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS
+        }}
+      />
+      <Stack.Screen
+        name="ProductPage"
+        component={ProductPage}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS
+        }}
+      />
+      <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS
+        }}
       />
     </Stack.Navigator>
   );

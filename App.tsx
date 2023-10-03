@@ -1,53 +1,37 @@
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  StatusBar,
-  Platform,
-  StyleSheet,
+  StatusBar
 } from 'react-native';
 
 import 'react-native-gesture-handler';
 
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
-import SystemNavigationBar from 'react-native-system-navigation-bar';
-import { LogBox } from 'react-native';
+import { CartProvider } from './src/contexts/cart';
+import Toast from 'react-native-toast-message';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 StatusBar.setHidden(true);
-LogBox.ignoreLogs(['new NativeEventEmitter']);
-SystemNavigationBar.navigationHide();
 
 const navTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',
+    background: '#FFF',
   },
 };
 
 function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar hidden={true} barStyle="light-content" translucent={true}/>
-      <NavigationContainer theme={navTheme}>
-        <AppNavigation />
-      </NavigationContainer>
-    </SafeAreaView>
+    <>
+      <CartProvider>
+      <StatusBar translucent hidden backgroundColor='transparent' />
+          <NavigationContainer theme={navTheme}>
+          <AppNavigation />
+          <Toast />
+        </NavigationContainer>
+      </CartProvider>
+    </>
   );
 }
 
 export default App;
-
-const StatusBarHeight = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: -StatusBarHeight,
-    marginBottom: -StatusBarHeight,
-  },
-});

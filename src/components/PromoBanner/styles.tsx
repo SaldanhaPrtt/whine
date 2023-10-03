@@ -1,15 +1,16 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import normalize from 'react-native-normalize';
 
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    width: width-20,
-    height: 100,
+    width: normalize(width-20, 'width'),
+    height: normalize(100, 'height'),
     marginBottom: 20,
-    backgroundColor: '#220000',
+    backgroundColor: 'rgba(76, 0, 0, 0.9)',
     borderRadius: 10,
-    shadowColor: "rgba(255, 255, 255, 1)",
+    shadowColor: "rgba(0, 0, 0, 1)",
     shadowOffset: {
       width: 5,
       height: 5,

@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginTop: 20,
+    marginBottom: 60
   },
   input: {
     backgroundColor: "#f5f5f5",

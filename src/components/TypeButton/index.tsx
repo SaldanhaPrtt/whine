@@ -9,7 +9,7 @@ type Props = {
   onPress: () => void;
 }
 
-export default function CircleButton({ text, color, onPress }: Props) {
+export default function TypeButton({ text, color, onPress }: Props) {
   return (
     <TouchableHighlight style={[styles.container]} onPress={onPress}>
       <Text style={styles.label}>{text}</Text>

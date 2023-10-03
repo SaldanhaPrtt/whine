@@ -1,14 +1,10 @@
 import { StyleSheet } from 'react-native';
+import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-  },
-  label: {
-    fontSize: 18,
-    color: '#FFF',
+    height: 150,
+    marginHorizontal: normalize(20),
   },
 });
 
