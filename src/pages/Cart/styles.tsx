@@ -1,13 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFF',
-        rowGap: normalize(20),
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    scrollView: {
+        width: Dimensions.get('window').width,
+    },
+    scrollViewContent: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: Dimensions.get('window').width,
     },
     imageContainer: {
         justifyContent: 'center',
@@ -55,6 +62,7 @@ const styles = StyleSheet.create({
         borderRadius: normalize(10),
     },
     emptyText: {
+        marginTop: normalize(60),
         fontSize: normalize(20),
         fontWeight: 'bold',
         color: 'rgba(76, 0, 0, 0.9)'

@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     justifyContent: 'space-between',
+    paddingTop: normalize(6)
   },
   label: {
     color: 'rgba(255, 255, 255, 1)',

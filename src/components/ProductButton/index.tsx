@@ -35,7 +35,7 @@ export default function ProductButton({ navigation, route, name, price, oldPrice
     });
   }
   return (
-    <TouchableHighlight style={styles.container}>
+    <TouchableHighlight underlayColor={'rgb(50,50,50)'} style={styles.container} onPress={handlePress}>
       <View style={styles.itemsView}>
         <ImageBackground resizeMode='contain' source={image ? {uri:image} : wine_png} style={styles.image} borderRadius={8}/>
         <Text style={styles.label}>{name}</Text>
@@ -44,7 +44,7 @@ export default function ProductButton({ navigation, route, name, price, oldPrice
             <Text style={styles.price}>R$ {price}</Text>
             <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
           </View>
-          <Pressable style={styles.plusIconView} onPress={handlePress}>
+          <Pressable style={styles.plusIconView}>
             <PlusIcon />
           </Pressable>
         </View>

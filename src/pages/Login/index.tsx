@@ -15,8 +15,8 @@ export default function Login({ route, navigation }: any) {
   }
   return (
     <View style={styles.container}>
-      <ImageBackground source={MainLogo}/>
-      <Button mode='contained' onPress={handlePress}>Entrar</Button>
+      <ImageBackground source={MainLogo} style={styles.image}/>
+      <Button mode='contained' onPress={handlePress} style={styles.button}>Entrar</Button>
     </View>
   )
 }

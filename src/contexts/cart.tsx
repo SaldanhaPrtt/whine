@@ -18,26 +18,28 @@ type Wine = {
 };
 
 export const CartProvider = ({ children }: any) => {
-  const [products, setProducts] = useState<Wine[]>([]);
+  const [cartProducts, setCartProducts] = useState<Wine[]>([]);
 
   const addToCart = (product: Wine) => {
-    if (products.find(item => item.id === product.id)) {
-      setProducts(products.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
+    console.log('addedProduct', product)
+    if (cartProducts.find(item => item.id === product.id)) {
+      setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
+    } else {
+      setCartProducts([...cartProducts, product]);
     }
-    setProducts([...products, product]);
   }
   
   const removeFromCart = (productId: string) => {
-    setProducts(products.filter(item => item.id !== productId));  
+    setCartProducts(cartProducts.filter(item => item.id !== productId));  
   }
 
   const clearCart = () => {
-    setProducts([]);
+    setCartProducts([]);
   }
 
   return (
     <CartContext.Provider value={{
-      products,
+      cartProducts,
       addToCart,
       removeFromCart,
       clearCart,

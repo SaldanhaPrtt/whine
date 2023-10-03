@@ -28,15 +28,15 @@ export default function CountriesBar() {
       scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
       overScrollMode='never'
     >
-      <CountryButton countryCode='br' text="Tinto"  onPress={OnPress} />
-      <CountryButton countryCode='fr' text="Rose"  onPress={OnPress} />
-      <CountryButton countryCode='pt' text="Branco"  onPress={OnPress} />
-      <CountryButton countryCode='hu' text="Espumante" onPress={OnPress} />
-      <CountryButton countryCode='it' text="Espumante" onPress={OnPress} />
-      <CountryButton countryCode='us' text="Espumante" onPress={OnPress} />
-      <CountryButton countryCode='cl' text="Espumante" onPress={OnPress} />
-      <CountryButton countryCode='ar' text="Espumante" onPress={OnPress} />
-      <CountryButton countryCode='uy' text="Espumante" onPress={OnPress} />
+      <CountryButton countryCode='br' text="Brasil"  onPress={OnPress} />
+      <CountryButton countryCode='fr' text="França"  onPress={OnPress} />
+      <CountryButton countryCode='pt' text="Portugal"  onPress={OnPress} />
+      <CountryButton countryCode='hu' text="Hungria" onPress={OnPress} />
+      <CountryButton countryCode='it' text="Itália" onPress={OnPress} />
+      <CountryButton countryCode='us' text="EUA" onPress={OnPress} />
+      <CountryButton countryCode='cl' text="Chile" onPress={OnPress} />
+      <CountryButton countryCode='ar' text="Argentina" onPress={OnPress} />
+      <CountryButton countryCode='uy' text="Uruguai" onPress={OnPress} />
     </ScrollView>
   );
 }

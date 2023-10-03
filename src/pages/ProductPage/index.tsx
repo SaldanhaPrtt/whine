@@ -10,7 +10,7 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
-    addToCart(route.params.name);
+    addToCart(route.params);
   }, [quantity]);
 
   return (
