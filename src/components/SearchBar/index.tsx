@@ -18,10 +18,11 @@ export default function SearchBar({ navigation, route }: Props) {
     <View style={styles.container}>
       <Searchbar
         placeholder="Procurar"
-        // onChangeText={onChangeSearch}
+        onChangeText={onChangeSearch}
         value={searchQuery}
         style={styles.searchBar}
         icon={() => <SearchIcon />}
+        clearIcon={() => <Text>X</Text>}
       />
       <TouchableHighlight>
         <FilterSearch />

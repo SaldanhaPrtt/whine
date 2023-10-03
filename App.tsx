@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
-import type {PropsWithChildren} from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
-  StatusBar,
-  Platform,
-  StyleSheet,
-  Dimensions,
+  StatusBar
 } from 'react-native';
 
 import 'react-native-gesture-handler';
@@ -21,28 +16,22 @@ const navTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',
+    background: '#FFF',
   },
 };
 
 function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar hidden={true} barStyle="light-content" translucent={true}/>
+    <>
       <CartProvider>
-        <NavigationContainer theme={navTheme}>
+      <StatusBar translucent hidden backgroundColor='transparent' />
+          <NavigationContainer theme={navTheme}>
           <AppNavigation />
+          <Toast />
         </NavigationContainer>
       </CartProvider>
-      <Toast />
-    </SafeAreaView>
+    </>
   );
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

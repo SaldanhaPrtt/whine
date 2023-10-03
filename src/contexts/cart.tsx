@@ -21,16 +21,19 @@ export const CartProvider = ({ children }: any) => {
   const [cartProducts, setCartProducts] = useState<Wine[]>([]);
 
   const addToCart = (product: Wine) => {
-    console.log('addedProduct', product)
     if (cartProducts.find(item => item.id === product.id)) {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
     } else {
       setCartProducts([...cartProducts, product]);
     }
-  }
+  } 
   
-  const removeFromCart = (productId: string) => {
-    setCartProducts(cartProducts.filter(item => item.id !== productId));  
+  const removeFromCart = (product: Wine) => {
+    if (cartProducts.find(item => item.id === product.id || item.quantity > 1)) {
+      setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity - 1 } : item));
+    } else {
+      setCartProducts(cartProducts.filter(item => item.id !== product.id));
+    }  
   }
 
   const clearCart = () => {

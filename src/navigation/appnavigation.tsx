@@ -8,20 +8,17 @@ import PickNavigation from './PickNavigation';
 import ProductPage from '../pages/ProductPage';
 import Cart from '../pages/Cart';
 import Login from '../pages/Login';
-import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
 const AppNavigation = () => {
-  const navigation = useNavigation();
-  const route = useNavigation().getState();
   return (
     <Stack.Navigator
-      initialRouteName='Login'
+      initialRouteName='Home'
       screenOptions={{
         header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
         headerShown: true,
-        gestureEnabled: true,
+        gestureEnabled: false,
         animationEnabled: true,
       }}
     >
@@ -31,8 +28,6 @@ const AppNavigation = () => {
         options={{
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
-          gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
         }}
       />
       <Stack.Screen 
@@ -41,8 +36,6 @@ const AppNavigation = () => {
         options={{
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
-          gestureEnabled: true,
-          gestureDirection: 'horizontal-inverted'
         }}
       />
       <Stack.Screen 
@@ -52,7 +45,6 @@ const AppNavigation = () => {
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
-          // gestureDirection: 'horizontal-inverted',
           ...TransitionPresets.SlideFromRightIOS
         }}
       />
@@ -63,7 +55,6 @@ const AppNavigation = () => {
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
-          // gestureDirection: 'horizontal',
           ...TransitionPresets.BottomSheetAndroid
         }}
       />
@@ -74,7 +65,6 @@ const AppNavigation = () => {
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
-          // gestureDirection: 'horizontal-inverted',
           ...TransitionPresets.SlideFromRightIOS
         }}
       />
@@ -85,7 +75,6 @@ const AppNavigation = () => {
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
-          // gestureDirection: 'horizontal-inverted',
           ...TransitionPresets.SlideFromRightIOS
         }}
       />
@@ -96,7 +85,6 @@ const AppNavigation = () => {
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
           gestureEnabled: true,
-          // gestureDirection: 'horizontal-inverted',
           ...TransitionPresets.SlideFromRightIOS
         }}
       />

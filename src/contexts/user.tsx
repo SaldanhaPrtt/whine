@@ -4,7 +4,14 @@ const UserContext = createContext({});
 
 type User = {
   name: string,
-  addresses: [
+  age: number,
+  dateOfBirth: string,
+  cpf: string,
+  email: string,
+  role: string,
+  clientType?: string,
+  token: string,
+  addresses?: [
     {
       name: string,
       street: string,
@@ -12,17 +19,16 @@ type User = {
       complement?: number,
       moniquer?: string
     }
-  ]
+  ],
+  selectedAdress?: string,
 }
 
 export const UserProvider = ({ children }: any) => {
-  const [addresses, setAddresses] = useState();
-  
-
+  const [user, setUser] = useState<User | null>(null);
 
   return (
     <UserContext.Provider value={{
-
+      user,
     }}>
       {children}
     </UserContext.Provider>
