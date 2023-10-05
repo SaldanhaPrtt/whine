@@ -8,6 +8,7 @@ import ArrowToLeft from '../../assets/JSXAssets/ArrowToLeft';
 import styles from './styles';
 import { List } from 'react-native-paper';
 import LocationIcon from '../../assets/JSXAssets/LocationIcon';
+import ProductPlusIcon from '../../assets/JSXAssets/PlusIcon';
 
 type HeaderProps = {
   navigation: any;
@@ -40,7 +41,7 @@ export default function Header({navigation, route}: {navigation: any, route: any
           style={styles.list}
           title={selectedItem ? selectedItem : "Selecionar Local"}
           left={() => <LocationIcon />}
-          right={() => <View />}
+          right={() => <ProductPlusIcon />}
           expanded={expanded}
           onPress={handlePress}>
           <List.Item 
