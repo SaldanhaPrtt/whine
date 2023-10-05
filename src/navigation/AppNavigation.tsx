@@ -8,13 +8,16 @@ import PickNavigation from './PickNavigation';
 import ProductPage from '../pages/ProductPage';
 import Cart from '../pages/Cart';
 import Login from '../pages/Login';
+import { useUser } from '../contexts/user';
 
 const Stack = createStackNavigator();
 
 const AppNavigation = () => {
+  const { user }: any = useUser();
+
   return (
     <Stack.Navigator
-      initialRouteName='Home'
+      initialRouteName={user ? 'Home' : 'Login'}
       screenOptions={{
         header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
         headerShown: true,

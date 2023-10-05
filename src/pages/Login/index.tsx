@@ -16,7 +16,15 @@ export default function Login({ route, navigation }: any) {
   return (
     <View style={styles.container}>
       <ImageBackground source={MainLogo} style={styles.image}/>
-      <Button mode='contained' onPress={handlePress} style={styles.button}>Entrar</Button>
+      <Button 
+        textColor='rgba(76, 0, 0, 0.9)'
+        buttonColor='#FFF' rippleColor='rgba(76, 0, 0, 0.9)'
+        mode='outlined'
+        onPress={handlePress}
+        style={styles.button}
+      >
+        Entrar
+      </Button>
     </View>
   )
 }

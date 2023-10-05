@@ -41,6 +41,17 @@ const styles = StyleSheet.create({
     height: 48,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  addressView: {
+    width: 200,
+    height: 48,
+  },
+  list: {
+    borderRadius: 8,
+    backgroundColor: '#FFF'
+  },
+  listItem: {
+    backgroundColor: '#FFF'
   }
 });
 
