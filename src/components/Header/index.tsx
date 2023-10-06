@@ -30,43 +30,47 @@ export default function Header({navigation, route}: {navigation: any, route: any
 
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Pressable onPress={handleLeftButton} style={styles.pressable}>
-          {route.name === 'Home' ? <OptionsIcon /> : <ArrowToLeft />}
-        </Pressable>
-      </View>
-      <View style={styles.addressView}>
-        <List.Accordion
-          rippleColor={"rgba(255, 255, 255, 0.2)"}
-          style={styles.list}
-          title={selectedItem ? selectedItem : "Selecionar Local"}
-          left={() => <LocationIcon />}
-          right={() => <ProductPlusIcon />}
-          expanded={expanded}
-          onPress={handlePress}>
-          <List.Item 
-            title="First item"
-            style={styles.listItem}
-            right={() => <View />}
-            onPress={() => setSelectedItem('First Item')}
-          />
-          <List.Item 
-            title="Second item"
-            style={styles.listItem}
-            right={() => <View />}
-            onPress={() => setSelectedItem('Second Item')}
-          />
-          <List.Item
-            title="Third item"
-            style={styles.listItem}
-            right={() => <View />}
-            onPress={() => setSelectedItem('Third Item')}
-          />
-        </List.Accordion>
-      </View>
-      <Pressable onPress={() => navigation.navigate('Cart')} style={styles.pressable}>
-        <BagIcon />
-      </Pressable>
+      {route.name === 'Login' ? <View /> : (
+        <>
+          <View style={styles.logoContainer}>
+            <Pressable onPress={handleLeftButton} style={styles.pressable}>
+              {route.name === 'Home' ? <OptionsIcon /> : <ArrowToLeft />}
+            </Pressable>
+          </View>
+          <View style={styles.addressView}>
+            <List.Accordion
+              rippleColor={"rgba(255, 255, 255, 0.2)"}
+              style={styles.list}
+              title={selectedItem ? selectedItem : "Selecionar Local"}
+              left={() => <LocationIcon />}
+              right={() => <View />}
+              expanded={expanded}
+              onPress={handlePress}>
+              <List.Item
+                title="First item"
+                style={styles.listItem}
+                right={() => <View />}
+                onPress={() => setSelectedItem('First Item')}
+              />
+              <List.Item
+                title="Second item"
+                style={styles.listItem}
+                right={() => <View />}
+                onPress={() => setSelectedItem('Second Item')}
+              />
+              <List.Item
+                title="Third item"
+                style={styles.listItem}
+                right={() => <View />}
+                onPress={() => setSelectedItem('Third Item')}
+              />
+            </List.Accordion>
+          </View>
+          <Pressable onPress={() => navigation.navigate('Cart')} style={styles.pressable}>
+            <BagIcon />
+          </Pressable>
+        </>
+      )}
     </View>
   );
 }
