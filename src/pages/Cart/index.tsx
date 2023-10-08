@@ -8,9 +8,9 @@ import { useCart } from '../../contexts/cart';
 import { Button } from 'react-native-paper';
 import { useUser } from '../../contexts/user';
 
-const CartItem = ({name, price} : { name: string, price: number}) => {
-  const { addToCart, removeFromCart, totalPrice }: any = useCart();
-  const [quantity, setQuantity] = useState(1);
+const CartItem = ({id, name, price, quantity} : { id: string, name: string, price: number, quantity: string}) => {
+  const { addToCart, removeFromCart }: any = useCart();
+
   return (
     <View style={styles.itemContainer}>
       <View style={styles.imageContainer}>
@@ -21,11 +21,11 @@ const CartItem = ({name, price} : { name: string, price: number}) => {
         <Text style={styles.price}>{price}</Text>
       </View>
       <View style={styles.counterContainer}>
-        <Pressable onPress={addToCart}>
+        <Pressable onPress={removeFromCart(id, quantity)}>
           <MinusIcon />
         </Pressable>
         <Text style={styles.counter}>{quantity}</Text>
-        <Pressable onPress={removeFromCart}>
+        <Pressable onPress={addToCart(id, quantity)}>
           <PlusIcon />
         </Pressable>
       </View>
@@ -35,20 +35,16 @@ const CartItem = ({name, price} : { name: string, price: number}) => {
 
 
 export default function Cart({ navigation, route }: any) {
-  const [refreshing, setRefreshing] = useState(false);
-  const { cartProducts, addToCart, removeFromCart, clearCart, totalPrice }: any = useCart();
+  const { cartProducts, clearCart, totalPrice }: any = useCart();
   const { user }: any = useUser();
 
   return (
     <View style={styles.container}>
       <ScrollView
-        // refreshControl={<RefreshControl
-        //   refreshing={refreshing}
-        //   onRefresh={() => setRefreshing(true)} />}
         style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
         {cartProducts && cartProducts.length > 0 && cartProducts.map((product: any, index: number) => {
           return (
-            <CartItem key={index} name={product.name} price={product.price} />
+            <CartItem id={product.id} key={index} name={product.name} price={product.price} quantity={product.quantity}/>
           )
         })}
         {cartProducts.length === 0 && (

@@ -7,11 +7,6 @@ import { useCart } from '../../contexts/cart';
 
 export default function ProductPage({ navigation, route }: { navigation: any, route: any }) {
   const { addToCart, removeFromCart }: any = useCart();
-  const [quantity, setQuantity] = useState(0);
-
-  useEffect(() => {
-    addToCart(route.params);
-  }, [quantity]);
 
   return (
     <View style={styles.container}>
@@ -25,11 +20,11 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
             <Text style={styles.label}>{route.params.name}</Text>
           </View>
           <View style={styles.addMinusView}>
-            <Pressable onPress={() => setQuantity(quantity - 1)}>
+            <Pressable onPress={removeFromCart(route.params)}>
               <MinusIcon />
             </Pressable>
-            <Text style={styles.quantity}>{quantity}</Text>
-            <Pressable onPress={() => setQuantity(quantity + 1)}>
+            <Text style={styles.quantity}>{route.params.quantity}</Text>
+            <Pressable onPress={addToCart(route.params)}>
               <PlusIcon />
             </Pressable>
           </View>

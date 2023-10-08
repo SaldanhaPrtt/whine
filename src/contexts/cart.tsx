@@ -4,7 +4,7 @@ const CartContext = createContext({});
 
 
 type Wine = {
-  id: string;
+  id: number;
   name: string;
   price: number;
   oldPrice?: number;
@@ -26,13 +26,13 @@ export const CartProvider = ({ children }: any) => {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
       setTotalPrice(totalPrice + product.price);
     } else {
-      setCartProducts([...cartProducts, product]);
+      setCartProducts([...cartProducts, { ...product, quantity: 1 } ]);
       setTotalPrice(totalPrice + product.price);
     }
   } 
   
   const removeFromCart = (product: Wine) => {
-    if (cartProducts.find(item => item.id === product.id || item.quantity > 1)) {
+    if (cartProducts.find(item => item.id === product.id && item.quantity > 1)) {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity - 1 } : item));
       setTotalPrice(totalPrice - product.price);
     } else {

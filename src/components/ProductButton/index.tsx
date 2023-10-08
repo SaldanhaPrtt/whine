@@ -8,6 +8,7 @@ import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 type Props = {
   navigation: any;
   route: any;
+  id: number;
   name: string;
   price: number;
   oldPrice?: number;
@@ -19,10 +20,11 @@ type Props = {
   image: string;
 };
 
-export default function ProductButton({ navigation, route, name, price, oldPrice, year, grapes, country, region, description, image }: Props) {
+export default function ProductButton({ navigation, route, id, name, price, oldPrice, year, grapes, country, region, description, image }: Props) {
 
   const handlePress = () => {
-    navigation.navigate('ProductPage', { 
+    navigation.navigate('ProductPage', {
+      id: id,
       name:name,
       price:price,
       oldPrice: oldPrice ? oldPrice : null,
@@ -44,9 +46,9 @@ export default function ProductButton({ navigation, route, name, price, oldPrice
             <Text style={styles.price}>R$ {price}</Text>
             <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
           </View>
-          <Pressable style={styles.plusIconView}>
+          {/* <Pressable style={styles.plusIconView}>
             <PlusIcon />
-          </Pressable>
+          </Pressable> */}
         </View>
       </View>
     </TouchableHighlight>

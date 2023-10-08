@@ -53,6 +53,7 @@ export default function MainProductsContainer({ navigation, route }: Props) {
             return(
               <ProductButton 
                 key={wine.id}
+                id={wine.id}
                 name={wine.name}
                 price={wine.price} 
                 oldPrice={wine.oldPrice}
