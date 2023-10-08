@@ -9,7 +9,7 @@ import styles from './styles';
 import SearchBar from '../../components/SearchBar';
 import ColorsBar from '../../components/ColorsBar';
 import CountriesBar from '../../components/CountriesBar';
-
+import DeliveryModal from '../../components/DeliveryModal';
 //Fazer a barra de países
 //Ver esse funcionamento
 
@@ -17,21 +17,14 @@ export default function Home({ navigation, route }: any) {
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />
-      {/* <View style={styles.scrollWrapper}>
-        <TypesBar />
-      </View> */}
       <View style={styles.scrollWrapper}>
         <CountriesBar />
       </View>
       <View style={styles.scrollWrapper}>
         <ColorsBar />
       </View>
-      {/* <PromoBanner />
-      <PickForYouBanner navigation={navigation} /> */}
+      {/* <DeliveryModal navigation={navigation} route={route} /> */}
       <ProductsContainer navigation={navigation} route={route} />
-      {/* <View style={styles.footerWrapper}>
-        <FooterNavigator navigation={navigation} route={route} />
-      </View> */}
     </View>
   );
 }

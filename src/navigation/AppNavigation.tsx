@@ -8,6 +8,7 @@ import PickNavigation from './PickNavigation';
 import ProductPage from '../pages/ProductPage';
 import Cart from '../pages/Cart';
 import Login from '../pages/Login';
+import Delivery from '../pages/Delivery';
 import { useUser } from '../contexts/user';
 
 const Stack = createStackNavigator();
@@ -84,6 +85,16 @@ const AppNavigation = () => {
       <Stack.Screen
         name="Cart"
         component={Cart}
+        options={{
+          header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
+          headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS
+        }}
+      />
+      <Stack.Screen
+        name="Delivery"
+        component={Delivery}
         options={{
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,

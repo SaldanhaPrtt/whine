@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getData, storeData, removeData } from '../services/AsyncStorage';
 const UserContext = createContext({});
 
@@ -26,9 +26,52 @@ type User = {
 export const UserProvider = ({ children }: any) => {
   const [user, setUser] = useState<User | null>(null);
 
+  const getUser = async () => {
+    const user = await getData('user');
+    if (user) {
+      setUser(user);
+    }
+  };
+
+  const setUserContext = async (user: User) => {
+    await storeData('user', user);
+    setUser(user);
+  };
+
+  const removeUserContext = async () => {
+    await removeData('user');
+    setUser(null);
+  };
+
+  const addAddress = async (address: any) => {
+    const user = await getData('user');
+    if (user) {
+      user.addresses.push(address);
+      await storeData('user', user);
+      setUser(user);
+    }
+  }
+
+  const removeAddress = async (address: any) => {
+    const user = await getData('user');
+    if (user) {
+      user.addresses = user.addresses.filter((item: any) => item.name !== address.name);
+      await storeData('user', user);
+      setUser(user);
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  },[]);
+
   return (
     <UserContext.Provider value={{
       user,
+      setUserContext,
+      removeUserContext,
+      addAddress,
+      removeAddress,
     }}>
       {children}
     </UserContext.Provider>

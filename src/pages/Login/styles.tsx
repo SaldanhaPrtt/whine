@@ -17,7 +17,11 @@ const styles = StyleSheet.create({
         height: 60,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: 'rgba(76, 0, 0, 0.5)'
+        borderColor: 'rgba(76, 0, 0, 0.5)',
+        padding: 0,
+        fontFamily: 'Raleway-Regular',
+        fontWeight: 'bold',
+        fontSize: 30,
     }
 });
 

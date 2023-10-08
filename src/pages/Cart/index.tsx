@@ -8,7 +8,7 @@ import { useCart } from '../../contexts/cart';
 import { Button } from 'react-native-paper';
 
 const CartItem = ({name, price} : { name: string, price: number}) => {
-  const { addToCart, removeFromCart }: any = useCart();
+  const { addToCart, removeFromCart, totalPrice }: any = useCart();
   const [quantity, setQuantity] = useState(1);
   return (
     <View style={styles.itemContainer}>
@@ -35,25 +35,32 @@ const CartItem = ({name, price} : { name: string, price: number}) => {
 
 export default function Cart({ navigation, route }: any) {
   const [refreshing, setRefreshing] = useState(false);
-  const { cartProducts, addToCart, removeFromCart, clearCart }: any = useCart();
+  const { cartProducts, addToCart, removeFromCart, clearCart, totalPrice }: any = useCart();
 
   return (
     <View style={styles.container}>
       <ScrollView
-        refreshControl={<RefreshControl
-          refreshing={refreshing}
-          onRefresh={() => setRefreshing(true)} />}
+        // refreshControl={<RefreshControl
+        //   refreshing={refreshing}
+        //   onRefresh={() => setRefreshing(true)} />}
         style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
         {cartProducts && cartProducts.length > 0 && cartProducts.map((product: any, index: number) => {
           return (
             <CartItem key={index} name={product.name} price={product.price} />
           )
         })}
-        {/* <CartItem name={'product.name'} price={25} /> */}
         {cartProducts.length === 0 && (
           <Text style={styles.emptyText}>{"Nenhum Produto Adicionado"}</Text>
         )}
       </ScrollView>
+      <View style={styles.infosContainer}>
+        <Text style={styles.totalText}>Valor Total: {totalPrice}</Text>
+      </View>
+      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained' onPress={clearCart}>Limpar Carrinho</Button>
+      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Produtos</Button>
+      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Cupom</Button>
+      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Endereço</Button>
+      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Cartão</Button>
       <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Finalizar Compra</Button>
     </View>
   );

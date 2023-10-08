@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
-import normalize from 'react-native-normalize';
+import normalize, { SCREEN_WIDTH } from 'react-native-normalize';
 
 const styles = StyleSheet.create({
     container: {
@@ -66,6 +66,33 @@ const styles = StyleSheet.create({
         fontSize: normalize(20),
         fontWeight: 'bold',
         color: 'rgba(76, 0, 0, 0.9)'
+    },
+    infosContainer: {
+        height: normalize(100),
+        width: normalize(SCREEN_WIDTH),
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F6F6F6',
+    },
+    totalText: {
+        fontSize: normalize(20),
+        fontWeight: 'bold',
+        marginBottom: normalize(10),
+        color: 'rgba(76, 0, 0, 0.9)',
+        fontFamily: 'Gotham-Light',
+    },
+    address: {
+        fontSize: normalize(18),
+        fontWeight: 'bold',
+        marginBottom: normalize(10),
+        color: 'rgba(76, 0, 0, 0.9)'
+    },
+    addressContainer: {
+        height: normalize(100),
+        width: normalize(330),
+        backgroundColor: '#F6F6F6',
+        flexDirection: 'row',
+        borderRadius: normalize(10),
     },
 });
 
