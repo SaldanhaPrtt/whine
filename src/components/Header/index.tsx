@@ -9,6 +9,7 @@ import styles from './styles';
 import { List } from 'react-native-paper';
 import LocationIcon from '../../assets/JSXAssets/LocationIcon';
 import ProductPlusIcon from '../../assets/JSXAssets/PlusIcon';
+import { useUser } from '../../contexts/user';
 
 type HeaderProps = {
   navigation: any;
@@ -23,7 +24,7 @@ export default function Header({navigation, route}: {navigation: any, route: any
       navigation.goBack();
     } 
   }
-
+  const { user }: any = useUser();
   const [expanded, setExpanded] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>();
   const handlePress = () => setExpanded(!expanded);
@@ -46,24 +47,18 @@ export default function Header({navigation, route}: {navigation: any, route: any
               right={() => <View />}
               expanded={expanded}
               onPress={handlePress}>
-              <List.Item
-                title="First item"
-                style={styles.listItem}
-                right={() => <View />}
-                onPress={() => setSelectedItem('First Item')}
-              />
-              <List.Item
-                title="Second item"
-                style={styles.listItem}
-                right={() => <View />}
-                onPress={() => setSelectedItem('Second Item')}
-              />
-              <List.Item
-                title="Third item"
-                style={styles.listItem}
-                right={() => <View />}
-                onPress={() => setSelectedItem('Third Item')}
-              />
+                {user && user.addresses && user.addresses.map((address: any, index: number) => {
+                  return (
+                    <List.Item
+                      key={index}
+                      title={address.name}
+                      style={styles.listItem}
+                      right={() => <View />}
+                      onPress={() => setSelectedItem(address.name)}
+                    />
+                  )
+                }
+              )}
             </List.Accordion>
           </View>
           <Pressable onPress={() => navigation.navigate('Cart')} style={styles.pressable}>

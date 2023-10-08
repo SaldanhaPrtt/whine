@@ -6,6 +6,7 @@ import MinusIcon from '../../assets/JSXAssets/MinusIcon';
 import wine_png from '../../assets/PNG/wine_png.png';
 import { useCart } from '../../contexts/cart';
 import { Button } from 'react-native-paper';
+import { useUser } from '../../contexts/user';
 
 const CartItem = ({name, price} : { name: string, price: number}) => {
   const { addToCart, removeFromCart, totalPrice }: any = useCart();
@@ -36,6 +37,7 @@ const CartItem = ({name, price} : { name: string, price: number}) => {
 export default function Cart({ navigation, route }: any) {
   const [refreshing, setRefreshing] = useState(false);
   const { cartProducts, addToCart, removeFromCart, clearCart, totalPrice }: any = useCart();
+  const { user }: any = useUser();
 
   return (
     <View style={styles.container}>
@@ -52,16 +54,12 @@ export default function Cart({ navigation, route }: any) {
         {cartProducts.length === 0 && (
           <Text style={styles.emptyText}>{"Nenhum Produto Adicionado"}</Text>
         )}
+          <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained' onPress={clearCart}>Limpar Carrinho</Button>
       </ScrollView>
       <View style={styles.infosContainer}>
         <Text style={styles.totalText}>Valor Total: {totalPrice}</Text>
+        <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Finalizar Compra</Button>
       </View>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained' onPress={clearCart}>Limpar Carrinho</Button>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Produtos</Button>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Cupom</Button>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Endereço</Button>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Adicionar Cartão</Button>
-      <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained'>Finalizar Compra</Button>
     </View>
   );
 };

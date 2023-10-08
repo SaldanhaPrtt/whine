@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F6F6F6',
+        bottom: 60,
     },
     totalText: {
         fontSize: normalize(20),

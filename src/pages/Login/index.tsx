@@ -16,9 +16,20 @@ export default function Login({ route, navigation }: any) {
       age: 18,
       dateOfBirth: '01/01/2000',
       cpf: '12345678900',
-      email: '',
+      email: 'teste@teste.com',
       role: 'admin',
       clientType: 'premium',
+      token: '1234567890',
+      addresses: [
+        {
+          name: 'Casa',
+          street: 'Rua Teste',
+          number: 123,
+          complement: 'Casa',
+          moniquer: 'Casa'
+        }
+      ],
+      selectedAdress: 'Casa'
     })
 
     const db = await getDatabase();

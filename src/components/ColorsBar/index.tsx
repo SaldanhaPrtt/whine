@@ -21,18 +21,18 @@ export default function ColorsBar() {
     
   }
   return (
-    <ScrollView 
+    <View 
       style={styles.container} 
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      snapToInterval={normalize(90)}
-      scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
-      overScrollMode='never'
+      // horizontal={true}
+      // showsHorizontalScrollIndicator={false}
+      // snapToInterval={normalize(90)}
+      // scrollIndicatorInsets={{top: 10, left: 10, bottom: 10, right: 10}}
+      // overScrollMode='never'
     >
       <ColorsButton image={<WineGlassIcon color='red'/> as any} text="Tinto"  onPress={OnPress} />
       <ColorsButton image={<WineGlassIcon color='pink'/> as any} text="Rose"  onPress={OnPress} />
       <ColorsButton image={<WineGlassIcon color='rgba(160, 160, 0,0.30)'/> as any} text="Branco"  onPress={OnPress} />
       <ColorsButton image={<ChampagneIcon /> as any} text="Espumante" onPress={OnPress} />
-    </ScrollView>
+    </View>
   );
 }
