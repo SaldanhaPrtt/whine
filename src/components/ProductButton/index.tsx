@@ -7,7 +7,6 @@ import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 
 type Props = {
   navigation: any;
-  route: any;
   id: number;
   name: string;
   price: number;
@@ -20,20 +19,11 @@ type Props = {
   image: string;
 };
 
-export default function ProductButton({ navigation, route, id, name, price, oldPrice, year, grapes, country, region, description, image }: Props) {
+export default function ProductButton({ navigation, id, name, price, oldPrice, year, grapes, country, region, description, image }: Props) {
 
   const handlePress = () => {
     navigation.navigate('ProductPage', {
       id: id,
-      name:name,
-      price:price,
-      oldPrice: oldPrice ? oldPrice : null,
-      year: year,
-      grapes: grapes,
-      country: country,
-      region: region,
-      description: description,
-      image: image
     });
   }
   return (

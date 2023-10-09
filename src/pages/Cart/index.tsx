@@ -4,12 +4,12 @@ import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import MinusIcon from '../../assets/JSXAssets/MinusIcon';
 import wine_png from '../../assets/PNG/wine_png.png';
-import { useCart } from '../../contexts/cart';
 import { Button } from 'react-native-paper';
 import { useUser } from '../../contexts/user';
+import { useWine } from '../../contexts/wines';
 
 const CartItem = ({id, name, price, quantity} : { id: string, name: string, price: number, quantity: string}) => {
-  const { addToCart, removeFromCart }: any = useCart();
+  const { addToCart, removeFromCart }: any = useWine();
 
   return (
     <View style={styles.itemContainer}>
@@ -21,11 +21,11 @@ const CartItem = ({id, name, price, quantity} : { id: string, name: string, pric
         <Text style={styles.price}>{price}</Text>
       </View>
       <View style={styles.counterContainer}>
-        <Pressable onPress={removeFromCart(id, quantity)}>
+        <Pressable onPress={() => removeFromCart(id)}>
           <MinusIcon />
         </Pressable>
         <Text style={styles.counter}>{quantity}</Text>
-        <Pressable onPress={addToCart(id, quantity)}>
+        <Pressable onPress={() => addToCart(id)}>
           <PlusIcon />
         </Pressable>
       </View>
@@ -35,7 +35,7 @@ const CartItem = ({id, name, price, quantity} : { id: string, name: string, pric
 
 
 export default function Cart({ navigation, route }: any) {
-  const { cartProducts, clearCart, totalPrice }: any = useCart();
+  const { cartProducts, clearCart, totalPrice }: any = useWine();
   const { user }: any = useUser();
 
   return (

@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
 
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import AppNavigation from './src/navigation/AppNavigation';
-import { CartProvider } from './src/contexts/cart';
+import { WineProvider } from './src/contexts/wines';
 import Toast from 'react-native-toast-message';
 import { UserProvider } from './src/contexts/user';
 
@@ -24,13 +24,13 @@ const navTheme = {
 function App() {
   return (
     <UserProvider>
-      <CartProvider>
+      <WineProvider>
         <StatusBar translucent hidden backgroundColor='transparent' />
         <NavigationContainer theme={navTheme}>
           <AppNavigation />
           <Toast />
         </NavigationContainer>
-      </CartProvider>
+      </WineProvider>
     </UserProvider>
   );
 }

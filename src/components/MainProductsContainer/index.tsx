@@ -5,6 +5,7 @@ import styles from './styles';
 import { getAllWines } from '../../services/SQLite/Wines'
 import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
 import { Button } from 'react-native-paper';
+import { useWine } from '../../contexts/wines';
 
 type Props = {
   navigation: any;
@@ -12,41 +13,13 @@ type Props = {
 };
 
 export default function MainProductsContainer({ navigation, route }: Props) {
-  const [wines, setWines] = useState<any>();
-  const [loaded, setLoaded] = useState<boolean>(false);
-  const [refreshing, setRefreshing] = useState<boolean>(false);
-  const loadData = async () => {
-    if(!loaded || refreshing) {
-      try {
-      const db = await getDatabase();
-      const tempWines = await getAllWines(db);
-      if(tempWines) {
-        tempWines.concat(tempWines)
-        setWines(tempWines)
-      }
-      await closeDatabase(db);
-      setRefreshing(false);
-      setLoaded(true);
-    } catch (error) {
-      console.log(error)
-    }
-    }
-  }
-  
-  useEffect(() => {
-    loadData()
-  }, [refreshing]);
-
-  useEffect(() => {
-    loadData()
-  }, []);
+  const { wines }: any = useWine();
 
   return (
     // <View style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => setRefreshing(true)} />}
       >
         {wines && wines.length > 0 && (
           wines.map((wine: any) => {
@@ -64,7 +37,6 @@ export default function MainProductsContainer({ navigation, route }: Props) {
                 description={wine.description}
                 image={wine.image}
                 navigation={navigation} 
-                route={route} 
               />
             )
           })

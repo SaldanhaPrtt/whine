@@ -11,13 +11,11 @@ import ColorsBar from '../../components/ColorsBar';
 import CountriesBar from '../../components/CountriesBar';
 import DeliveryModal from '../../components/DeliveryModal';
 import { useUser } from '../../contexts/user';
-import { useCart } from '../../contexts/cart';
 //Fazer a barra de países
 //Ver esse funcionamento
 
 export default function Home({ navigation, route }: any) {
   const { user }: any = useUser();
-  const { cartProducts }: any = useCart();
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />
