@@ -8,6 +8,7 @@ import { ActivityIndicator } from 'react-native-paper';
 
 export default function ProductPage({ navigation, route }: { navigation: any, route: any }) {
   const { addToCart, removeFromCart, wines }: any = useWine();
+  const [localQuantity, setLocalQuantity] = useState<number>(0);
 
   const [wine, setWine] = useState<any>();
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -15,10 +16,21 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
   useEffect(() => {
     if(!loaded) {
     const wine = wines.find((wine: any) => wine.id === route.params.id);
+    setLocalQuantity(wine.quantity)
     setWine(wine);
     setLoaded(true);
     }
   }, [])
+
+  const handleIncrease = () => {
+    setLocalQuantity(localQuantity + 1)
+    addToCart(wine)
+  }
+
+  const handleDecrease = () => {
+    setLocalQuantity(localQuantity - 1)
+    removeFromCart(wine)
+  }
 
   return (
     <>
@@ -34,11 +46,11 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
               <Text style={styles.label}>{wine.name}</Text>
             </View>
             <View style={styles.addMinusView}>
-              <Pressable onPress={() => removeFromCart(wine)}>
+              <Pressable onPress={() => handleDecrease()}>
                 <MinusIcon />
               </Pressable>
-              <Text style={styles.quantity}>{wine.quantity}</Text>
-              <Pressable onPress={() => addToCart(wine)}>
+              <Text style={styles.quantity}>{localQuantity}</Text>
+              <Pressable onPress={() => handleIncrease()}>
                 <PlusIcon />
               </Pressable>
             </View>

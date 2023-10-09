@@ -33,7 +33,7 @@ export const WineProvider = ({ children }: any) => {
         const db = await getDatabase();
         const tempWines = await getAllWines(db);
         if (tempWines) {
-          setWines(tempWines)
+          setWines(tempWines as any)
         }
         await closeDatabase(db);
         setLoaded(true);
@@ -54,9 +54,11 @@ export const WineProvider = ({ children }: any) => {
   const addToCart = (product: Wine) => {
     if (cartProducts.find(item => item.id === product.id)) {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
+      setWines(wines.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item))
       setTotalPrice(totalPrice + product.price);
     } else {
       setCartProducts([...cartProducts, { ...product, quantity: 1 } ]);
+      setWines([...cartProducts, { ...product, quantity: 1 } ]);
       setTotalPrice(totalPrice + product.price);
     }
   } 
@@ -64,9 +66,11 @@ export const WineProvider = ({ children }: any) => {
   const removeFromCart = (product: Wine) => {
     if (cartProducts.find(item => item.id === product.id && item.quantity > 1)) {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity - 1 } : item));
+      setWines(wines.map(item => item.id === product.id ? { ...product, quantity: item.quantity - 1 } : item));
       setTotalPrice(totalPrice - product.price);
     } else {
       setCartProducts(cartProducts.filter(item => item.id !== product.id));
+      setWines(cartProducts.filter(item => item.id !== product.id));
       setTotalPrice(totalPrice - product.price);
     }  
   }

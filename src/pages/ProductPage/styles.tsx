@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   lowerContainer: {
     height: normalize(200),
     bottom: 0,
-    // backgroundColor: "rgba(236,236,236, 1)",
+    backgroundColor: "rgba(236,236,236, 1)",
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
     paddingHorizontal: normalize(30),
