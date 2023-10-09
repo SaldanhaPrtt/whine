@@ -10,6 +10,7 @@ import { insertWine } from '../../services/SQLite/Wines';
 import { Button, TextInput, Checkbox } from 'react-native-paper';
 import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
 import Toast from 'react-native-toast-message';
+import { useWine } from '../../contexts/wines';
 
 type Wine = {
   name: string;
@@ -24,6 +25,7 @@ type Wine = {
 };
 
 export default function RegisterWhine({navigation, route}: {navigation: any, route: any}) {
+  const {addWine}: any = useWine();
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [oldPrice, setOldPrice] = useState('')
@@ -73,7 +75,6 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   const handleRegister = async () => {
     if (name && price && oldPrice && year && grapes && country && region && description && image) {
       try {
-        const db = await getDatabase();
         const wine: Wine = {
           name: name,
           price: parseFloat(price),
@@ -85,8 +86,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
           description: description,
           image: image,
         };
-        await insertWine(db, wine);
-        await closeDatabase(db as any);
+        await addWine(wine);
         Toast.show({
           type: 'success',
           text1: 'Vinho cadastrado com sucesso',

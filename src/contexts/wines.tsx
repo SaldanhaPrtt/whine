@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getAllWines } from '../services/SQLite/Wines'
+import { getAllWines, insertWine } from '../services/SQLite/Wines'
 import { closeDatabase, getDatabase } from '../services/SQLite/SQLite';
 import { useUser } from './user';
 
@@ -51,6 +51,13 @@ export const WineProvider = ({ children }: any) => {
     loadData()
   }, [user]);
 
+  const addWine = async (wine: any) => {
+    setWines([...wines, wine])
+    const db = await getDatabase();
+    await insertWine(db, wine);
+    await closeDatabase(db as any);
+  }
+
   const addToCart = (product: Wine) => {
     if (cartProducts.find(item => item.id === product.id)) {
       setCartProducts(cartProducts.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item));
@@ -88,6 +95,7 @@ export const WineProvider = ({ children }: any) => {
       removeFromCart,
       clearCart,
       totalPrice,
+      addWine
     }}>
       {children}
     </WineContext.Provider>
