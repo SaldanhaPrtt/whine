@@ -13,13 +13,17 @@ type Props = {
 };
 
 export default function MainProductsContainer({ navigation, route }: Props) {
-  const { wines }: any = useWine();
+  const { wines, setRefresh, refresh }: any = useWine();
+
+  console.log(refresh)
 
   return (
     // <View style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
+        refreshControl={<RefreshControl refreshing={refresh} onRefresh={() => setRefresh(true)} />}
+        overScrollMode='never'
       >
         {wines && wines.length > 0 && (
           wines.map((wine: any) => {
