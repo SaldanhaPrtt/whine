@@ -15,8 +15,6 @@ import { useUser } from '../../contexts/user';
 //Ver esse funcionamento
 
 export default function Home({ navigation, route }: any) {
-  console.log(navigation.getState().routes);
-  const { user }: any = useUser();
   return (
     <View style={styles.container}>
       <SearchBar navigation={navigation} route={route} />

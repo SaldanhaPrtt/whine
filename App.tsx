@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StatusBar
+  StatusBar, View
 } from 'react-native';
 
 import 'react-native-gesture-handler';
@@ -27,7 +27,9 @@ function App() {
       <WineProvider>
         <StatusBar translucent hidden backgroundColor='transparent' />
         <NavigationContainer theme={navTheme}>
+        <View style={{flex: 1}}>
           <AppNavigation />
+        </View>
           <Toast />
         </NavigationContainer>
       </WineProvider>

@@ -13,32 +13,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    bgImage: {
-        flex: 1,
-        width: width,
-    },
     scrollWrapper: {
         // flex: 1,
         // backgroundColor: 'black',
         // marginTop: 100,
         width: '100%',
         height: 100,
-        // flexDirection: 'row',
-    },
-    squareWrapper: {
-        // flex: 1,
-        // backgroundColor: 'black',
-        // marginTop: 100,
-        width: '100%',
-        height: 100,
-        // flexDirection: 'row',
-    },
-    footerWrapper: {
-        // flex: 1,
-        // backgroundColor: 'black',
-        // marginTop: 100,
-        width: '100%',
-        // height: 100,
         // flexDirection: 'row',
     },
 });
