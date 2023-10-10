@@ -108,7 +108,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register Whine</Text>
-      <ScrollView style={styles.inputContainer}>
+      <ScrollView style={styles.inputContainer} overScrollMode='never'>
         <TextInput
           style={styles.input}
           onChangeText={(text) => setName(text)}
