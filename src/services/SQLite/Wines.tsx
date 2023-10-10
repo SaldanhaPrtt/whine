@@ -48,7 +48,7 @@ async function insertWine(db: any, wine: Wine) {
   ];
   await runTransactionQuery(
     db,
-    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+    `INSERT INTO wines (id, name, price, oldPrice, year, grapes, country, region, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
     result as any,
   );
 }

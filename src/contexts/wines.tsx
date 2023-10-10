@@ -26,31 +26,33 @@ export const WineProvider = ({ children }: any) => {
   const [loaded, setLoaded] = useState(false);
   const [cartProducts, setCartProducts] = useState<Wine[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [refresh, setRefresh] = useState<boolean>(true);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   const loadData = async () => {
-    if (!loaded || refresh) {
-      try {
-        const db = await getDatabase();
-        const tempWines = await getAllWines(db);
-        if (tempWines) {
-          setWines(tempWines as any)
-        }
-        await closeDatabase(db);
-        setLoaded(true);
-        setRefresh(false);
-      } catch (error) {
-        console.log(error)
+    try {
+      const db = await getDatabase();
+      const tempWines = await getAllWines(db);
+      if (tempWines) {
+        setWines(tempWines as any)
       }
+      await closeDatabase(db);
+      setLoaded(true);
+      setRefreshing(false);
+    } catch (error) {
+      console.log(error)
     }
   }
 
   useEffect(() => {
-    loadData()
+    if (!loaded || refreshing) {
+      loadData()
+    }
   }, []);
 
   useEffect(() => {
-    loadData()
+    if (!loaded || refreshing) {
+      loadData()
+    }
   }, [user]);
 
   const addWine = async (wine: any) => {
@@ -98,8 +100,8 @@ export const WineProvider = ({ children }: any) => {
       clearCart,
       totalPrice,
       addWine,
-      refresh,
-      setRefresh
+      refreshing,
+      setRefreshing
     }}>
       {children}
     </WineContext.Provider>

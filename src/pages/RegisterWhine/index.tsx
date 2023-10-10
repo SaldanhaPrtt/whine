@@ -9,6 +9,7 @@ import CircleButton from '../../components/TypeButton';
 import { Button, TextInput, Checkbox } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 import { useWine } from '../../contexts/wines';
+import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
 type Wine = {
@@ -76,7 +77,6 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
     if (name && price && oldPrice && year && grapes && country && region && description && image) {
       try {
         const uuid = uuidv4();
-        console.log(uuid);
         const wine: Wine = {
           id: uuid,
           name: name,
@@ -100,7 +100,7 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
           text1: 'Erro ao cadastrar vinho',
         });
       } finally {
-        navigation.navigate('Home');
+        // navigation.navigate('Home');
       }
     }
   }
