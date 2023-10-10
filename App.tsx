@@ -25,11 +25,9 @@ function App() {
   return (
     <UserProvider>
       <WineProvider>
-        <StatusBar translucent hidden backgroundColor='transparent' />
         <NavigationContainer theme={navTheme}>
-        <View style={{flex: 1}}>
+          <StatusBar translucent hidden backgroundColor='transparent' />
           <AppNavigation />
-        </View>
           <Toast />
         </NavigationContainer>
       </WineProvider>

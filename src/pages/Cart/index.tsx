@@ -50,8 +50,7 @@ const CartItem = ({product} : any) => {
 
 export default function Cart({ navigation, route }: any) {
   const { cartProducts, clearCart, totalPrice }: any = useWine();
-  const { user }: any = useUser();
-
+  
   return (
     <View style={styles.container}>
       <ScrollView

@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     verticalAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: normalize(30),
     width: '100%',
   },
   searchBar: {
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
     width: normalize(300),
     borderRadius: 10,
     height: normalize(48),
-    marginBottom: normalize(20),
     marginHorizontal: 10,
     paddingHorizontal: 8,
   },

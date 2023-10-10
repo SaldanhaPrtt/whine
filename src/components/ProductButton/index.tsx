@@ -4,6 +4,7 @@ import small_product_image from '../../assets/PNG/small_product_image.jpg';
 import wine_png from '../../assets/PNG/wine_png.png';
 import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
+import { Button } from 'react-native-paper';
 
 type Props = {
   navigation: any;
@@ -30,15 +31,15 @@ export default function ProductButton({ navigation, id, name, price, oldPrice, y
     <TouchableHighlight underlayColor={'rgb(50,50,50)'} style={styles.container} onPress={handlePress}>
       <View style={styles.itemsView}>
         <ImageBackground resizeMode='contain' source={image ? {uri:image} : wine_png} style={styles.image} borderRadius={8}/>
-        <Text style={styles.label}>{name}</Text>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>
-            <Text style={styles.price}>R$ {price}</Text>
-            <Text style={styles.oldPrice}>R$ {oldPrice}</Text>
+            <Text style={styles.label}>{name}</Text>
+            <Text style={styles.price}>R${price}</Text>
+            <Text style={styles.oldPrice}>R${oldPrice}</Text>
           </View>
-          {/* <Pressable style={styles.plusIconView}>
-            <PlusIcon />
-          </Pressable> */}
+          <Button style={styles.button} mode="contained" onPress={() => console.log('Pressed')}>
+            <PlusIcon/>
+          </Button>
         </View>
       </View>
     </TouchableHighlight>

@@ -17,14 +17,16 @@ import { useUser } from '../../contexts/user';
 export default function Home({ navigation, route }: any) {
   return (
     <View style={styles.container}>
-      <SearchBar navigation={navigation} route={route} />
-      <View style={styles.scrollWrapper}>
+      <View style={styles.searchWrapper}>
+        <SearchBar navigation={navigation} route={route} />
+      </View>
+      <View style={styles.countriesWrapper}>
         <CountriesBar />
       </View>
-      <View style={styles.scrollWrapper}>
+      <View style={styles.colorsWrapper}>
         <ColorsBar />
       </View>
-      <DeliveryModal navigation={navigation} route={route} />
+      {/* <DeliveryModal navigation={navigation} route={route} /> */}
       <ProductsContainer navigation={navigation} route={route} />
     </View>
   );

@@ -1,6 +1,7 @@
 import { StyleSheet, Platform } from "react-native";
 
 import { Dimensions } from 'react-native';
+import normalize from "react-native-normalize";
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
@@ -12,14 +13,17 @@ const styles = StyleSheet.create({
         // paddingHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        marginHorizontal: normalize(20),
     },
-    scrollWrapper: {
-        // flex: 1,
-        // backgroundColor: 'black',
-        // marginTop: 100,
+    searchWrapper: {
         width: '100%',
-        height: 100,
-        // flexDirection: 'row',
+        marginBottom: normalize(40),
+    },
+    countriesWrapper: {
+        width: '100%',
+    },
+    colorsWrapper: {
+        width: '100%',
     },
 });
 

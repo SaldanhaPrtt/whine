@@ -3,9 +3,8 @@ import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
-    marginHorizontal: normalize(20),
-    flexDirection: 'row',
+    height: 100,
+     flexDirection: 'row',
   },
 });
 

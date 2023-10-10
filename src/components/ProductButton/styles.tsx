@@ -6,16 +6,14 @@ const styles = StyleSheet.create({
     width: normalize(160),
     height: normalize(220),
     // backgroundColor: 'rgba(102, 0, 0, 1)', //660000
-    backgroundColor: '#F6F6F6',
-    borderRadius: 8,
+    backgroundColor: 'rgb(246, 246, 246)',
+    borderRadius: 18,
     padding: normalize(20),
   },
   label: {
     color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 18,
-    textAlign: 'left',
-    alignSelf: 'flex-start',
-    fontFamily: 'Gotham-Book',
+    fontFamily: 'Raleway-SemiBold',
   },
   itemsView: {
     flexDirection: 'column',
@@ -26,14 +24,12 @@ const styles = StyleSheet.create({
   price: {
     color: 'rgba(76, 0, 0, 0.9)',
     fontSize: 20,
-    textAlign: 'center',
-    fontFamily: 'Gotham-Medium',
+    fontFamily: 'Raleway-SemiBold',
   },
   oldPrice: {
     color: 'rgba(76, 0, 0, 0.9)',
-    fontSize: 14,
-    textAlign: 'center',
-    fontFamily: 'Gotham-XLight',
+    fontSize: 12,
+    fontFamily: 'Raleway-Regular',
     textDecorationLine: 'line-through',
   },
   image: {
@@ -41,18 +37,20 @@ const styles = StyleSheet.create({
     height: normalize(120),
   },
   lowerView: {
-    marginTop: normalize(5),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: normalize(20),
     width: '100%',
+    marginTop: normalize(10),
   },
   pricesView: {
-    alignItems: 'center',
-    verticalAlign: 'center',
-    justifyContent: 'center',
+    width: '50%',
   },
-  plusIconView: {
+  button: {
+    backgroundColor: 'rgba(76, 0, 0, 0.9)',
+    height: normalize(32),
+    alignItems: 'center',
+    justifyContent: 'center',
+    verticalAlign: 'center',
   },
 });
 

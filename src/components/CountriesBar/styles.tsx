@@ -3,8 +3,8 @@ import normalize from 'react-native-normalize';
 
 const styles = StyleSheet.create({
   container: {
-    height: 150,
-    marginHorizontal: normalize(20),
+    height: 100,
+    marginBottom: normalize(20),
   },
 });
 

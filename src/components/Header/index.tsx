@@ -21,7 +21,7 @@ export default function Header({navigation, route}: {navigation: any, route: any
     if (route.name === 'Home') {
       navigation.navigate('Profile');
     } else {
-      navigation.navigate('Home');
+      navigation.goBack();
     } 
   }
   const { user }: any = useUser();
