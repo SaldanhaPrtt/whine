@@ -6,13 +6,13 @@ import * as ImagePicker from 'react-native-image-picker';
 import styles from './styles';
 import Header from '../../components/Header';
 import CircleButton from '../../components/TypeButton';
-import { insertWine } from '../../services/SQLite/Wines';
 import { Button, TextInput, Checkbox } from 'react-native-paper';
-import { closeDatabase, getDatabase } from '../../services/SQLite/SQLite';
 import Toast from 'react-native-toast-message';
 import { useWine } from '../../contexts/wines';
+import { v4 as uuidv4 } from 'uuid';
 
 type Wine = {
+  id: string;
   name: string;
   price: number;
   oldPrice?: number;
@@ -75,7 +75,10 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
   const handleRegister = async () => {
     if (name && price && oldPrice && year && grapes && country && region && description && image) {
       try {
+        const uuid = uuidv4();
+        console.log(uuid);
         const wine: Wine = {
+          id: uuid,
           name: name,
           price: parseFloat(price),
           oldPrice: parseFloat(oldPrice),

@@ -2,6 +2,7 @@ import { runTransactionQuery } from './SQLite';
 
 
 type Wine = {
+  id: string;
   name: string;
   price: number;
   oldPrice?: number;
@@ -17,14 +18,14 @@ async function createWinesTable(db: any) {
   await runTransactionQuery(
     db,
     `CREATE TABLE IF NOT EXISTS wines (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
+      id VARCHAR(255) PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
       price FLOAT NOT NULL,
       oldPrice FLOAT,
       year INTEGER NOT NULL,
-      grapes TEXT NOT NULL,
-      country TEXT NOT NULL,
-      region TEXT NOT NULL,
+      grapes VARCHAR(255) NOT NULL,
+      country VARCHAR(255) NOT NULL,
+      region VARCHAR(255) NOT NULL,
       description TEXT NOT NULL,
       image TEXT NOT NULL,
       quantity INTEGER DEFAULT 0
@@ -34,6 +35,7 @@ async function createWinesTable(db: any) {
 
 async function insertWine(db: any, wine: Wine) {
   const result: any[] = [
+    wine.id,
     wine.name,
     wine.price,
     wine.oldPrice,
@@ -46,7 +48,7 @@ async function insertWine(db: any, wine: Wine) {
   ];
   await runTransactionQuery(
     db,
-    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+    `INSERT INTO wines (name, price, oldPrice, year, grapes, country, region, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
     result as any,
   );
 }

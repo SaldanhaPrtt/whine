@@ -15,8 +15,6 @@ type Props = {
 export default function MainProductsContainer({ navigation, route }: Props) {
   const { wines, setRefresh, refresh }: any = useWine();
 
-  console.log(refresh)
-
   return (
     // <View style={styles.container}>
       <ScrollView
