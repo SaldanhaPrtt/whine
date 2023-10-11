@@ -16,7 +16,9 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
   useEffect(() => {
     if(!loaded) {
     const wine = wines.find((wine: any) => wine.id === route.params.id);
-    setLocalQuantity(wine.quantity)
+    if(wine && wine.quantity){
+      setLocalQuantity(wine.quantity)
+    }
     setWine(wine);
     setLoaded(true);
     }

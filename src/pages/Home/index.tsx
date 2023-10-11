@@ -11,6 +11,7 @@ import ColorsBar from '../../components/ColorsBar';
 import CountriesBar from '../../components/CountriesBar';
 import DeliveryModal from '../../components/DeliveryModal';
 import { useUser } from '../../contexts/user';
+import { CommonActions, useFocusEffect } from '@react-navigation/native';
 //Fazer a barra de países
 //Ver esse funcionamento
 

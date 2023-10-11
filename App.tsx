@@ -25,13 +25,13 @@ function App() {
   return (
     <UserProvider>
       <WineProvider>
-        <>
+        <View style={{flex: 1}}>
           <StatusBar hidden={true} translucent={true}/>
           <NavigationContainer theme={navTheme}>
             <AppNavigation />
             <Toast />
           </NavigationContainer>
-        </>
+        </View>
       </WineProvider>
     </UserProvider>
   );

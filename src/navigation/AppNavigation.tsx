@@ -40,6 +40,9 @@ const AppNavigation = () => {
         options={{
           header: ({navigation, route}) => <Header navigation={navigation} route={route} />,
           headerShown: true,
+          gestureEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+          gestureDirection: 'horizontal-inverted',
         }}
       />
       <Stack.Screen 

@@ -10,6 +10,7 @@ import { List } from 'react-native-paper';
 import LocationIcon from '../../assets/JSXAssets/LocationIcon';
 import ProductPlusIcon from '../../assets/JSXAssets/PlusIcon';
 import { useUser } from '../../contexts/user';
+import { CommonActions } from '@react-navigation/native';
 
 type HeaderProps = {
   navigation: any;
@@ -21,7 +22,12 @@ export default function Header({navigation, route}: {navigation: any, route: any
     if (route.name === 'Home') {
       navigation.navigate('Profile');
     } else {
-      navigation.goBack();
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [{ name: 'Home' }],
+        })
+      );
     } 
   }
   const { user }: any = useUser();
