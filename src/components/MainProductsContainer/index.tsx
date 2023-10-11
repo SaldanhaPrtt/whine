@@ -28,17 +28,9 @@ export default function MainProductsContainer({ navigation, route }: Props) {
             return(
               <ProductButton 
                 key={wine.id}
-                id={wine.id}
-                name={wine.name}
-                price={wine.price} 
-                oldPrice={wine.oldPrice}
-                year={wine.year}
-                grapes={wine.grapes}
-                country={wine.country}
-                region={wine.region}
-                description={wine.description}
-                image={wine.image}
                 navigation={navigation} 
+                route={route}
+                wine={wine}
               />
             )
           })

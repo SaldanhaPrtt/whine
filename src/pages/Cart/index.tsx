@@ -4,7 +4,7 @@ import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import MinusIcon from '../../assets/JSXAssets/MinusIcon';
 import wine_png from '../../assets/PNG/wine_png.png';
-import { Button } from 'react-native-paper';
+import { Button, IconButton } from 'react-native-paper';
 import { useUser } from '../../contexts/user';
 import { useWine } from '../../contexts/wines';
 
@@ -27,6 +27,7 @@ const CartItem = ({product} : any) => {
   }
   return (
     <View style={styles.itemContainer}>
+      <View style={styles.leftItemContainer}>
       <View style={styles.imageContainer}>
         <Image source={wine_png} style={styles.image} />
       </View>
@@ -34,14 +35,25 @@ const CartItem = ({product} : any) => {
         <Text style={styles.label}>{product.name}</Text>
         <Text style={styles.price}>{product.price}</Text>
       </View>
+      </View>
       <View style={styles.counterContainer}>
-        <Pressable onPress={() => handleDecrease()}>
-          <MinusIcon />
-        </Pressable>
+        <IconButton 
+          style={styles.button}
+          mode="contained"
+          onPress={() => handleDecrease()}
+          icon={MinusIcon}
+          containerColor='color: "rgba(76, 0, 0, 0.9)"'
+          size={16}
+        />
         <Text style={styles.counter}>{localQuantity}</Text>
-        <Pressable onPress={() => handleIncrease()}>
-          <PlusIcon />
-        </Pressable>
+        <IconButton 
+          style={styles.button}
+          mode="contained"
+          onPress={() => handleIncrease()}
+          icon={PlusIcon}
+          containerColor='color: "rgba(76, 0, 0, 0.9)"'
+          size={16}
+        />
       </View>
     </View>
   );
@@ -63,7 +75,7 @@ export default function Cart({ navigation, route }: any) {
         {cartProducts.length === 0 && (
           <Text style={styles.emptyText}>{"Nenhum Produto Adicionado"}</Text>
         )}
-          <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained' onPress={clearCart}>Limpar Carrinho</Button>
+          {/* <Button buttonColor='rgba(76, 0, 0, 0.85)' mode='contained' onPress={clearCart}>Limpar Carrinho</Button> */}
       </ScrollView>
       <View style={styles.infosContainer}>
         <Text style={styles.totalText}>Valor Total: {totalPrice}</Text>

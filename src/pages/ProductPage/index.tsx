@@ -4,7 +4,7 @@ import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import MinusIcon from '../../assets/JSXAssets/MinusIcon';
 import { useWine } from '../../contexts/wines';
-import { ActivityIndicator } from 'react-native-paper';
+import { ActivityIndicator, Button, IconButton } from 'react-native-paper';
 
 export default function ProductPage({ navigation, route }: { navigation: any, route: any }) {
   const { addToCart, removeFromCart, wines }: any = useWine();
@@ -28,8 +28,10 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
   }
 
   const handleDecrease = () => {
-    setLocalQuantity(localQuantity - 1)
-    removeFromCart(wine)
+    if(localQuantity !== 0) {
+      setLocalQuantity(localQuantity - 1)
+      removeFromCart(wine)
+    }
   }
 
   return (
@@ -46,13 +48,23 @@ export default function ProductPage({ navigation, route }: { navigation: any, ro
               <Text style={styles.label}>{wine.name}</Text>
             </View>
             <View style={styles.addMinusView}>
-              <Pressable onPress={() => handleDecrease()}>
-                <MinusIcon />
-              </Pressable>
+              <IconButton 
+                style={styles.button}
+                mode="contained"
+                onPress={() => handleDecrease()}
+                icon={MinusIcon}
+                containerColor='color: "rgba(76, 0, 0, 0.9)"'
+                size={16}
+              />
               <Text style={styles.quantity}>{localQuantity}</Text>
-              <Pressable onPress={() => handleIncrease()}>
-                <PlusIcon />
-              </Pressable>
+              <IconButton 
+                style={styles.button}
+                mode="contained"
+                onPress={() => handleIncrease()}
+                icon={PlusIcon}
+                containerColor='color: "rgba(76, 0, 0, 0.9)"'
+                size={16}
+              />
             </View>
           </View>
           <View style={styles.descriptionContainer}>

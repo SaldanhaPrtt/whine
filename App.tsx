@@ -25,11 +25,13 @@ function App() {
   return (
     <UserProvider>
       <WineProvider>
-        <NavigationContainer theme={navTheme}>
-          <StatusBar translucent hidden backgroundColor='transparent' />
-          <AppNavigation />
-          <Toast />
-        </NavigationContainer>
+        <>
+          <StatusBar hidden={true} translucent={true}/>
+          <NavigationContainer theme={navTheme}>
+            <AppNavigation />
+            <Toast />
+          </NavigationContainer>
+        </>
       </WineProvider>
     </UserProvider>
   );

@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: Dimensions.get('window').width,
     },
+    leftItemContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        width: normalize(200, 'width')
+    },
     imageContainer: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -60,6 +65,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6F6F6',
         flexDirection: 'row',
         borderRadius: normalize(10),
+        paddingHorizontal: normalize(10)
     },
     emptyText: {
         marginTop: normalize(60),
@@ -94,6 +100,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6F6F6',
         flexDirection: 'row',
         borderRadius: normalize(10),
+    },
+    button: {
+        height: normalize(32, 'height'),
+        width: normalize(36, 'width'),
+        borderRadius: 20,
+        shadowColor: 'rgba(0, 0, 0, 1)',
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
     },
 });
 

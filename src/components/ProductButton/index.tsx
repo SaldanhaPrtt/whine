@@ -5,39 +5,32 @@ import wine_png from '../../assets/PNG/wine_png.png';
 import styles from './styles';
 import PlusIcon from '../../assets/JSXAssets/PlusIcon';
 import { Button } from 'react-native-paper';
+import { useWine } from '../../contexts/wines';
 
 type Props = {
   navigation: any;
-  id: number;
-  name: string;
-  price: number;
-  oldPrice?: number;
-  year: string;
-  grapes: string;
-  country: string;
-  region: string;
-  description: string;
-  image: string;
+  route: any;
+  wine: any;
 };
 
-export default function ProductButton({ navigation, id, name, price, oldPrice, year, grapes, country, region, description, image }: Props) {
-
+export default function ProductButton({ navigation, route, wine }: Props) {
+  const { addToCart }: any = useWine();
   const handlePress = () => {
     navigation.navigate('ProductPage', {
-      id: id,
+      id: wine.id,
     });
   }
   return (
     <TouchableHighlight underlayColor={'rgb(50,50,50)'} style={styles.container} onPress={handlePress}>
       <View style={styles.itemsView}>
-        <ImageBackground resizeMode='contain' source={image ? {uri:image} : wine_png} style={styles.image} borderRadius={8}/>
+        <ImageBackground resizeMode='contain' source={wine.image ? {uri: wine.image} : wine_png} style={styles.image} borderRadius={8}/>
         <View style={styles.lowerView}>
           <View style={styles.pricesView}>
-            <Text style={styles.label}>{name}</Text>
-            <Text style={styles.price}>R${price}</Text>
-            <Text style={styles.oldPrice}>R${oldPrice}</Text>
+            <Text style={styles.label}>{wine.name}</Text>
+            <Text style={styles.price}>R${wine.price}</Text>
+            <Text style={styles.oldPrice}>R${wine.oldPrice}</Text>
           </View>
-          <Button style={styles.button} mode="contained" onPress={() => console.log('Pressed')}>
+          <Button style={styles.button} mode="contained" onPress={() => addToCart(wine)}>
             <PlusIcon/>
           </Button>
         </View>

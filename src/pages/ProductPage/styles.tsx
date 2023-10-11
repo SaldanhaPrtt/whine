@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   upperContainer: {
     top: 0,
-    height: normalize(350),
+    height: normalize(350, 'height'),
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(255,255,255, 1)",
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   lowerContainerHeader: {
     width: `100%`,
-    height: normalize(100),
+    height: normalize(100, 'height'),
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -66,10 +66,12 @@ const styles = StyleSheet.create({
   addMinusView: {
     flexDirection: "row",
     justifyContent: "center",
+    alignItems: 'center',
+    height: normalize(40, 'height')
   },
   descriptionContainer: {
     width: `100%`,
-    height: normalize(160),
+    height: normalize(160, 'height'),
     bottom: 0,
     borderTopLeftRadius: normalize(50),
     borderTopRightRadius: normalize(50),
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Gotham-Medium",
     marginHorizontal: normalize(10),
-    width: normalize(40),
+    width: normalize(40, 'width'),
   },
   labelView: {
     flexDirection: "column",
@@ -104,7 +106,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: normalize(width),
+    width: normalize(width, 'width'),
+  },
+  button: {
+    height: normalize(32, 'height'),
+    width: normalize(36, 'width'),
+    borderRadius: 20,
+    shadowColor: 'rgba(0, 0, 0, 1)',
+    shadowOffset: {
+        width: 0,
+        height: 4,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });
 
