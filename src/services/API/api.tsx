@@ -4,14 +4,14 @@ let baseURL;
 
 switch (process.env.NODE_ENV) {
   case 'development':
-    baseURL = 'http://app.roehn.com/api/';
+    baseURL = 'http://192.168.15.19:3000';
     break;
   case 'production':
-    baseURL = 'http://app.roehn.com/api/';
+    baseURL = 'http://192.168.15.19:3000';
     break;
 
   default:
-    baseURL = 'http://app.roehn.com/api/';
+    baseURL = 'http://192.168.15.19:3000';
     break;
 }
 

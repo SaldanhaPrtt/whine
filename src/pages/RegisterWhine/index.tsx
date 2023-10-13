@@ -11,6 +11,7 @@ import Toast from 'react-native-toast-message';
 import { useWine } from '../../contexts/wines';
 import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
+import api from '../../services/API/api';
 
 type Wine = {
   id: string;
@@ -89,12 +90,14 @@ export default function RegisterWhine({navigation, route}: {navigation: any, rou
           description: description,
           image: image,
         };
+        await api.post('/wines', wine);
         await addWine(wine);
         Toast.show({
           type: 'success',
           text1: 'Vinho cadastrado com sucesso',
         });
       } catch (error) {
+        console.log(error)
         Toast.show({
           type: 'error',
           text1: 'Erro ao cadastrar vinho',
